@@ -132,15 +132,15 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             padding: 25px;
             margin-bottom: 20px;
             box-shadow: 
                 0 8px 32px rgba(6,21,52,0.12),
                 0 4px 16px rgba(59,89,152,0.08);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .status-section {
@@ -380,6 +380,24 @@
             text-align: justify;
         }
 
+        .prayer-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .prayer-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .prayer-subtitle:hover {
+            opacity: 1;
+        }
+
         .drawing-animation {
             background: linear-gradient(135deg, var(--quote-grad-start) 0%, var(--quote-grad-end) 100%);
             color: white;
@@ -415,7 +433,81 @@
             font-size: 14px;
         }
 
+        .prayer-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
 
+        .prayer-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .prayer-modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 8px 32px rgba(6,21,52,0.15), 0 4px 16px rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .prayer-modal.show .prayer-modal-content {
+            transform: scale(1);
+        }
+
+        .prayer-modal-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .prayer-modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--navy);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-align: justify;
+            white-space: pre-line;
+        }
+
+        .close-prayer-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--navy);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .close-prayer-modal:hover {
+            opacity: 1;
+        }
 
         .titles-modal {
             position: fixed;
@@ -583,8 +675,6 @@
             opacity: 1;
         }
 
-
-
         @keyframes titlePop {
             0% {
                 transform: translate(-50%, -50%) scale(0.5);
@@ -668,7 +758,7 @@
                 padding: 15px;
             }
 
-            .titles-content {
+            .titles-content, .prayer-modal-content {
                 padding: 20px;
                 width: 95%;
                 max-height: 85%;
@@ -731,8 +821,6 @@
                 🏆 Tytuły Dyskretniaka
             </button>
         </div>
-
-
     </div>
 
     <!-- Modal tytułów -->
@@ -747,38 +835,81 @@
         </div>
     </div>
 
+    <!-- Modal modlitwy -->
+    <div class="prayer-modal" id="prayerModal">
+        <div class="prayer-modal-content">
+            <button class="close-prayer-modal" onclick="hidePrayerModal()">×</button>
+            <div class="prayer-modal-title" id="prayerModalTitle"></div>
+            <div class="prayer-modal-text" id="prayerModalText"></div>
+        </div>
+    </div>
+
     <script>
         const prayers = [
-            "Zdrowaś Maryjo, łaski pełna, Pan z Tobą, błogosławiona jesteś między niewiastami i błogosławiony owoc żywota Twojego, Jezus. Święta Maryjo, Matko Boża, módl się za nami grzesznymi teraz i w godzinę śmierci naszej. Amen.",
-            "Ojcze nasz, któryś jest w niebiesiech, święć się imię Twoje, przyjdź królestwo Twoje, bądź wola Twoja jako w niebie tak i na ziemi. Chleba naszego powszedniego daj nam dzisiaj i odpuść nam nasze winy, jako i my odpuszczamy naszym winowajcom, i nie wódź nas na pokuszenie, ale nas zbaw ode złego. Amen.",
-            "Wierzę w Boga, Ojca wszechmogącego, Stworzyciela nieba i ziemi. I w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego, który się począł z Ducha Świętego, narodził się z Maryi Panny, umęczony pod Ponckim Piłatem, ukrzyżowany, umarł i pogrzebany, zstąpił do piekieł, trzeciego dnia zmartwychwstał, wstąpił na niebiosa, siedzi po prawicy Boga Ojca wszechmogącego, stamtąd przyjdzie sądzić żywych i umarłych. Wierzę w Ducha Świętego, święty Kościół powszechny, świętych obcowanie, grzechów odpuszczenie, ciała zmartwychwstanie, żywot wieczny. Amen.",
-            "Chwała Ojcu i Synowi, i Duchowi Świętemu, jako była na początku, teraz i zawsze, i na wieki wieków. Amen.",
-            "Pod Twoją obronę uciekamy się, święta Boża Rodzicielko, naszymi prośbami nie gardź w potrzebach naszych, ale od wszelkich złych przygód wiecznie nas wybawiaj, Panno chwalebna i błogosławiona.",
-            "Witaj, Królowo, Matko miłosierdzia, życie, słodyczy i nadziejo nasza, witaj! Do Ciebie wołamy, wygnańcy, synowie Ewy, do Ciebie wzdychamy, jęcząc i płacząc na tym łez padole.",
-            "Pamiętaj, o najmiłosierniejsza Panno Maryjo, że nie słyszano od wieków, aby ktoś, do Twej świętej opieki się uciekający, Twojej pomocy się dopraszający, o Twoją przyczynę się błagający, był od Ciebie opuszczony.",
-            "Aniele Boży, stróżu mój, ty zawsze przy mnie stój, rano, wieczór, we dnie, w nocy, bądź mi zawsze ku pomocy!",
-            "Wieczne odpoczywanie racz im dać, Panie, a światłość wiekuista niechaj im świeci. Niech odpoczywają w pokoju. Amen.",
-            "Jezu, ufam Tobie!",
-            "Jezu miłosierny, miej litość nad nami i nad całym światem!",
-            "Najświętsze Serce Jezusa, zmiłuj się nad nami!",
-            "Niepokalane Serce Maryi, módl się za nami!",
-            "Duchu Święty, przyjdź!",
-            "Święty Józefie, módl się za nami!",
-            "Królowo Polski, módl się za nami!",
-            "Święty Boże, Święty mocny, Święty nieśmiertelny, zmiłuj się nad nami!",
-            "Boże, bądź miłościw mnie grzesznemu!",
-            "Panie Jezu Chryste, Synu Boga żywego, zmiłuj się nade mną grzesznym!",
-            "Błogosławiony niech będzie Bóg w darach swoich!",
-            "Błogosławiona niech będzie Najświętsza Maryja Panna!",
-            "Magnificat: Wielbi dusza moja Pana i raduje się duch mój w Bogu, Zbawicielu moim.",
-            "Anioł Pański zwiastował Pannie Maryi i poczęła z Ducha Świętego.",
-            "Oto ja służebnica Pańska, niech mi się stanie według słowa Twego.",
-            "A Słowo Ciałem się stało i mieszkało między nami.",
-            "Kłaniamy Ci się, Panie Jezu Chryste, i błogosławimy Ciebie, żeś przez święty krzyż Twój świat odkupił.",
-            "Ciebie, Boże, chwalimy, Ciebie, Panie, wyznajemy.",
-            "Przyjdź, Stworzycielu Duchu, nasze umysły nawiedź, łaską napełnij serca, które sam stworzyłeś.",
-            "Serce Jezusa, Syna Ojca Przedwiecznego, zmiłuj się nad nami!",
-            "Za Jego bolesną mękę, miej miłosierdzie nad nami i nad całym światem!"
+            {
+                title: "Ojcze nasz",
+                text: "Ojcze nasz, któryś jest w niebie,\nświięć się Imię Twoje,\nprzyj­dź Królestwo Twoje,\nbądź wola Twoja jako w niebie, tak i na ziemi.\nChleba naszego powszedniego daj nam dzisiaj\ni odpuść nam nasze winy,\njako i my odpuszczamy naszym winowajcom.\nI nie wódź nas na pokuszenie,\nale nas zbaw ode złego. Amen."
+            },
+            {
+                title: "Zdrowaś Maryjo",
+                text: "Zdrowaś Maryjo, łaski pełna,\nPan z Tobą,\nbłogosławionaś Ty między niewiastami\ni błogosławiony owoc żywota Twojego, Jezus.\nŚwięta Maryjo, Matko Boża,\nmódl się za nami grzesznymi,\nteraz i w godzinę śmierci naszej. Amen."
+            },
+            {
+                title: "Chwała Ojcu",
+                text: "Chwała Ojcu i Synowi, i Duchowi Świętemu,\njak była na początku, teraz i zawsze,\ni na wieki wieków. Amen."
+            },
+            {
+                title: "Wierzę w Boga (Skład Apostolski)",
+                text: "Wierzę w Boga, Ojca Wszechmogącego,\nStworzyciela nieba i ziemi,\ni w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego,\nktóry się począł z Ducha Świętego,\nnarodził się z Maryi Panny,\numęczon pod Ponckim Piłatem,\nukrzyżowan, umarł i pogrzebion;\nzstąpił do piekieł, trzeciego dnia zmartwychwstał;\nwstąpił na niebiosa, siedzi po prawicy Boga Ojca Wszechmogącego,\nstamtąd przyjdzie sądzić żywych i umarłych.\nWierzę w Ducha Świętego,\nświęty Kościół powszechny,\nświętych obcowanie, grzechów odpuszczenie,\nciała zmartwychwstanie, żywot wieczny. Amen."
+            },
+            {
+                title: "Pod Twoją obronę",
+                text: "Pod Twoją obronę uciekamy się, Święta Boża Rodzicielko,\nnaszymi prośbami racz nie gardzić w potrzebach naszych,\nale od wszelakich złych przygód racz nas zawsze wybawiać,\nPanno chwalebna i błogosławiona.\nO Pani nasza, Orędowniczko nasza, Pośredniczko nasza, Pocieszycielko nasza,\nSynem swoim nas pojednaj, Synowi swojemu nas polecaj,\nswojemu Synowi nas oddawaj. Amen."
+            },
+            {
+                title: "Aniele Boży, Stróżu mój",
+                text: "Aniele Boży, Stróżu mój,\nTy zawsze przy mnie stój,\nrano, wieczór, we dnie, w nocy,\nbądź mi zawsze ku pomocy.\nStrzeż duszy, ciała mego,\nzaprowadź mnie do żywota wiecznego. Amen."
+            },
+            {
+                title: "Modlitwa do Ducha Świętego",
+                text: "Duchu Święty, przyjdź,\nnapełnij serca swoich wiernych\ni zapal w nich ogień swojej miłości.\nZeślij Ducha swego, a powstanie życie,\ni odnowisz oblicze ziemi. Amen."
+            },
+            {
+                title: "Jezu, ufam Tobie",
+                text: "Jezu, ufam Tobie!"
+            },
+            {
+                title: "Święty Boże",
+                text: "Święty Boże, Święty mocny,\nŚwięty a Nieśmiertelny,\nzmiłuj się nad nami i nad całym światem."
+            },
+            {
+                title: "Baranku Boży",
+                text: "Baranku Boży, który gładzisz grzechy świata,\nzmiłuj się nad nami.\nBaranku Boży, który gładzisz grzechy świata,\nzmiłuj się nad nami.\nBaranku Boży, który gładzisz grzechy świata,\nobdarz nas pokojem."
+            },
+            {
+                title: "Panie, nie jestem godzien",
+                text: "Panie, nie jestem godzien,\nabyś przyszedł do mnie,\nale powiedz tylko słowo,\na będzie uzdrowiona dusza moja."
+            },
+            {
+                title: "O Krwi i Wodo",
+                text: "O Krwi i Wodo, któraś wypłynęła\nz Najświętszego Serca Jezusowego\njako zdrój miłosierdzia dla nas,\nufam Tobie."
+            },
+            {
+                title: "Boże, bądź miłościw mnie grzesznemu",
+                text: "Boże, bądź miłościw mnie grzesznemu!"
+            },
+            {
+                title: "Święty, Święty, Święty Pan Bóg Zastępów",
+                text: "Święty, Święty, Święty Pan Bóg Zastępów.\nPełne są niebiosa i ziemia chwały Twojej.\nHosanna na wysokości!"
+            },
+            {
+                title: "Serce Jezusa, ufam Tobie",
+                text: "Serce Jezusa, ufam Tobie!"
+            },
+            {
+                title: "Apel Jasnogórski",
+                text: "Maryjo, Królowo Polski,\njestem przy Tobie, pamiętam, czuwam."
+            }
         ];
 
         const intentions = [
@@ -1042,7 +1173,9 @@
             const today = new Date().toDateString();
             if (lastDrawDate === today && todaysPrayer && todaysIntention) {
                 const resultsArea = document.getElementById('resultsArea');
-                const highestTitle = getHighestUnlockedTitle();
+                
+                // Znajdź obiekt modlitwy na podstawie tytułu
+                const prayerObj = prayers.find(p => p.title === todaysPrayer) || { title: todaysPrayer, text: todaysPrayer };
                 
                 resultsArea.innerHTML = `
                     <div class="result-card show">
@@ -1057,7 +1190,10 @@
                             <div class="icon">🙏</div>
                             Dzisiejsza modlitwa
                         </div>
-                        <div class="result-content">${todaysPrayer}</div>
+                        <div class="result-content">
+                            <div class="prayer-title">${prayerObj.title}</div>
+                            <div class="prayer-subtitle" onclick="showPrayerModal('${prayerObj.title}', \`${prayerObj.text}\`)">naciśnij aby wyświetlić pełny tekst</div>
+                        </div>
                     </div>
                 `;
                 showCountdown();
@@ -1099,6 +1235,16 @@
             document.getElementById('countdownSection').style.display = 'block';
         }
 
+        function showPrayerModal(title, text) {
+            document.getElementById('prayerModalTitle').textContent = title;
+            document.getElementById('prayerModalText').textContent = text;
+            document.getElementById('prayerModal').classList.add('show');
+        }
+
+        function hidePrayerModal() {
+            document.getElementById('prayerModal').classList.remove('show');
+        }
+
         function startDrawing() {
             if (!canDrawToday()) {
                 return;
@@ -1134,7 +1280,7 @@
                     </div>
                 `;
 
-                const prayerOptions = [...prayers];
+                const prayerOptions = prayers.map(p => p.title);
                 let prayerIndex = 0;
                 const prayerInterval = setInterval(() => {
                     document.getElementById('drawingText2').textContent = prayerOptions[prayerIndex % prayerOptions.length];
@@ -1150,7 +1296,7 @@
                     // Zapisz wyniki
                     const today = new Date().toDateString();
                     lastDrawDate = today;
-                    todaysPrayer = selectedPrayer;
+                    todaysPrayer = selectedPrayer.title;
                     todaysIntention = selectedIntention;
                     
                     // Aktualizuj passę
@@ -1159,7 +1305,7 @@
                     // Dodaj do historii
                     drawHistory.unshift({
                         date: today,
-                        prayer: selectedPrayer,
+                        prayer: selectedPrayer.title,
                         intention: selectedIntention,
                         streak: currentStreak
                     });
@@ -1172,8 +1318,6 @@
                     saveAllData();
                     
                     // Pokaż wyniki - najpierw intencja, potem modlitwa
-                    const highestTitle = getHighestUnlockedTitle();
-                    
                     resultsArea.innerHTML = `
                         <div class="result-card">
                             <div class="result-title">
@@ -1187,7 +1331,10 @@
                                 <div class="icon">🙏</div>
                                 Twoja dzisiejsza modlitwa
                             </div>
-                            <div class="result-content">${selectedPrayer}</div>
+                            <div class="result-content">
+                                <div class="prayer-title">${selectedPrayer.title}</div>
+                                <div class="prayer-subtitle" onclick="showPrayerModal('${selectedPrayer.title}', \`${selectedPrayer.text}\`)">naciśnij aby wyświetlić pełny tekst</div>
+                            </div>
                         </div>
                     `;
                     
@@ -1203,8 +1350,6 @@
                 }, 3000);
             }, 3000);
         }
-
-
 
         // Inicjalizacja - załaduj dane ponownie i wyświetl
         window.addEventListener('load', function() {
@@ -1290,6 +1435,12 @@
             }
         });
 
+        document.getElementById('prayerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hidePrayerModal();
+            }
+        });
+
         // Zapisuj dane przy każdej zmianie
         function saveAllData() {
             try {
@@ -1322,10 +1473,6 @@
         // Zapisuj dane przy każdej aktywności użytkownika
         document.addEventListener('click', saveAllData);
         document.addEventListener('keydown', saveAllData);
-
-
-
-
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990734e960ceb659',t:'MTc2MDc4MTgxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99091ce6d7f15779',t:'MTc2MDgwMTgwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

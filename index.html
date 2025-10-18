@@ -40,20 +40,21 @@
 
         .back-arrow {
             position: fixed;
-            top: 30px;
+            bottom: 30px;
             left: 30px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
+            z-index: 10000;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(6,21,52,0.15);
+            box-shadow: 0 4px 20px rgba(6,21,52,0.2);
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             animation: slideInLeft 0.8s ease-out;
         }
 
@@ -414,56 +415,7 @@
             font-size: 14px;
         }
 
-        .history-section {
-            margin-top: 30px;
-        }
 
-        .history-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--navy);
-        }
-
-        .history-item {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 18px;
-            margin-bottom: 12px;
-            border-left: 5px solid var(--point-blue);
-            box-shadow: 0 4px 15px rgba(6,21,52,0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .history-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--point-blue), rgba(43, 123, 214, 0.3));
-        }
-
-        .history-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 6px 20px rgba(6,21,52,0.12);
-        }
-
-        .history-date {
-            font-size: 0.85rem;
-            color: var(--navy);
-            opacity: 0.8;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .history-content {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
 
         .titles-modal {
             position: fixed;
@@ -471,7 +423,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.1);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -479,6 +431,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .titles-modal.show {
@@ -487,15 +440,16 @@
         }
 
         .titles-content {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             padding: 30px;
             max-width: 500px;
             width: 90%;
             max-height: 80%;
             overflow-y: auto;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(25px);
+            box-shadow: 0 8px 32px rgba(6,21,52,0.15), 0 4px 16px rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transform: scale(0.8);
             transition: transform 0.3s ease;
         }
@@ -522,14 +476,16 @@
         }
 
         .title-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
             padding: 20px;
             margin-bottom: 15px;
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 16px rgba(6,21,52,0.1), 0 2px 8px rgba(255,255,255,0.1);
         }
 
         .title-card.unlocked {
@@ -557,13 +513,15 @@
         .title-icon {
             width: 32px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(255, 255, 255, 0.1);
         }
 
         .title-icon img {
@@ -723,7 +681,7 @@
             .back-arrow {
                 width: 45px;
                 height: 45px;
-                top: 25px;
+                bottom: 25px;
                 left: 25px;
             }
 
@@ -735,19 +693,16 @@
     </style>
 </head>
 <body>
-    <div class="back-arrow" onclick="window.open('https://blogwpg.my.canva.site/', '_blank')">
+    <a href="https://blogwpg.my.canva.site/" target="_blank" rel="noopener noreferrer" class="back-arrow">
         <svg viewBox="0 0 24 24">
             <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
         </svg>
-    </div>
+    </a>
     
     <div class="container">
         <div class="header">
             <h1 class="title">
                 Dyskretna Intencja
-                <svg class="title-arrow" viewBox="0 0 24 24">
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                </svg>
             </h1>
             <p class="subtitle">Codzienna modlitwa i intencja o północy</p>
         </div>
@@ -777,24 +732,7 @@
             </button>
         </div>
 
-        <div class="card history-section">
-            <div class="history-title">Historia losowań</div>
-            <div id="historyArea">
-                <div class="history-item">
-                    <div class="history-date">Brak wcześniejszych losowań</div>
-                    <div class="history-content">Rozpocznij swoje pierwsze losowanie!</div>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="history-title">🔍 Wyszukiwarka Dyskretniackich Kodów</div>
-            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <input type="text" id="codeInput" placeholder="Wpisz kod..." style="flex: 1; padding: 12px; border: 2px solid rgba(30, 58, 138, 0.2); border-radius: 10px; font-size: 1rem; font-family: 'Roboto', sans-serif; background: rgba(255, 255, 255, 0.9);">
-                <button onclick="searchCode()" style="padding: 12px 20px; background: linear-gradient(135deg, var(--quote-grad-start) 0%, var(--quote-grad-end) 100%); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Szukaj</button>
-            </div>
-            <div id="codeResult" style="display: none; padding: 15px; background: rgba(43, 123, 214, 0.08); border-radius: 10px; border-left: 4px solid var(--point-blue);"></div>
-        </div>
     </div>
 
     <!-- Modal tytułów -->
@@ -1260,36 +1198,13 @@
                     }, 100);
                     
                     updateDrawButton();
-                    updateHistory();
                     showCountdown();
                     showStreak();
                 }, 3000);
             }, 3000);
         }
 
-        function updateHistory() {
-            const historyArea = document.getElementById('historyArea');
-            
-            if (drawHistory.length === 0) {
-                historyArea.innerHTML = `
-                    <div class="history-item">
-                        <div class="history-date">Brak wcześniejszych losowań</div>
-                        <div class="history-content">Rozpocznij swoje pierwsze losowanie!</div>
-                    </div>
-                `;
-                return;
-            }
-            
-            historyArea.innerHTML = drawHistory.map(item => `
-                <div class="history-item">
-                    <div class="history-date">${new Date(item.date).toLocaleDateString('pl-PL')} ${item.streak ? `🔥 Passa: ${item.streak} dni` : ''}</div>
-                    <div class="history-content">
-                        <strong>Intencja:</strong> ${item.intention}<br>
-                        <strong>Modlitwa:</strong> ${item.prayer.substring(0, 50)}...
-                    </div>
-                </div>
-            `).join('');
-        }
+
 
         // Inicjalizacja - załaduj dane ponownie i wyświetl
         window.addEventListener('load', function() {
@@ -1297,14 +1212,12 @@
             updateDrawButton();
             updateTitlesButton();
             showTodaysResults();
-            updateHistory();
         });
         
         // Uruchom inicjalizację od razu
         updateDrawButton();
         updateTitlesButton();
         showTodaysResults();
-        updateHistory();
         showStreak();
         
         setInterval(updateCountdown, 1000);
@@ -1410,122 +1323,9 @@
         document.addEventListener('click', saveAllData);
         document.addEventListener('keydown', saveAllData);
 
-        // Wyszukiwarka kodów
-        const dyskretniacCodes = {
-            'MODLITWA2024': 'Specjalny kod na dodatkową modlitwę: "Boże, błogosław wszystkich Dyskretniaków i ich intencje. Amen."',
-            'PASSA30': 'Gratulacje! Kod na 30-dniową passę: "Wytrwałość w modlitwie prowadzi do świętości."',
-            'INTENCJA': 'Kod intencji: "Za wszystkich użytkowników aplikacji Dyskretna Intencja i ich rodziny."',
-            'BLOGWPG': 'Kod BlogWPG: "Niech Bóg błogosławi twórców tej aplikacji i wszystkich, którzy ją używają."',
-            'DYSKRETNY': 'Kod Dyskretniaka: "Modlitwa w ukryciu przynosi największe owoce duchowe."',
-            'POLNOC': 'Kod Północy: "O północy, gdy świat śpi, nasze serca czuwają z Bogiem."',
-            'TAJEMNICA': 'Tajemny kod: "Największe cuda dzieją się w ciszy serca modlącego się człowieka."',
-            
-            // Kody tytułów
-            'NOWICJUSZ': '🏆 Tytuł "Nowicjusz" - Wymagane: 2 dni passy modlitwy. Pierwszy krok na drodze do świętości!',
-            'UCZEŃ WYTRWAŁOŚCI': '🏆 Tytuł "Uczeń Wytrwałości" - Wymagane: 5 dni passy. Uczysz się regularności w modlitwie.',
-            'UCZEN WYTRWALOSCI': '🏆 Tytuł "Uczeń Wytrwałości" - Wymagane: 5 dni passy. Uczysz się regularności w modlitwie.',
-            'WYTRWAŁY PRAKTYKANT': '🏆 Tytuł "Wytrwały Praktykant" - Wymagane: 10 dni passy. Modlitwa staje się Twoim nawykiem.',
-            'WYTRWALY PRAKTYKANT': '🏆 Tytuł "Wytrwały Praktykant" - Wymagane: 10 dni passy. Modlitwa staje się Twoim nawykiem.',
-            'OGARNIĘTY DYSKRETNIAK': '🏆 Tytuł "Ogarnięty Dyskretniak" - Wymagane: 15 dni passy. Jesteś prawdziwym Dyskretnikiem!',
-            'OGARNIETY DYSKRETNIAK': '🏆 Tytuł "Ogarnięty Dyskretniak" - Wymagane: 15 dni passy. Jesteś prawdziwym Dyskretnikiem!',
-            'MISTRZ RUTYNY': '🏆 Tytuł "Mistrz Rutyny" - Wymagane: 20 dni passy. Modlitwa to już część Twojego życia.',
-            'ŚWIATŁO DYSKRECJI': '🏆 Tytuł "Światło Dyskrecji" - Wymagane: 25 dni passy. Twoja wytrwałość jest inspiracją!',
-            'SWIATLO DYSKRECJI': '🏆 Tytuł "Światło Dyskrecji" - Wymagane: 25 dni passy. Twoja wytrwałość jest inspiracją!',
-            'DUCHOWNY WETERAN': '🏆 Tytuł "Duchowny Weteran" - Wymagane: 30 dni passy. Osiągnąłeś legendę!',
-            'LEGENDARNY': '🏆 Tytuł "Duchowny Weteran" - Wymagane: 30 dni passy. Osiągnąłeś legendę!'
-        };
 
-        function searchCode() {
-            const input = document.getElementById('codeInput');
-            const result = document.getElementById('codeResult');
-            const code = input.value.trim().toUpperCase();
-            
-            if (!code) {
-                result.style.display = 'none';
-                return;
-            }
-            
-            // Sprawdź czy to kod tytułu, który ustawia passę
-            const titleCodes = {
-                'NOWICJUSZ': 2,
-                'UCZEŃ WYTRWAŁOŚCI': 5,
-                'UCZEN WYTRWALOSCI': 5,
-                'WYTRWAŁY PRAKTYKANT': 10,
-                'WYTRWALY PRAKTYKANT': 10,
-                'OGARNIĘTY DYSKRETNIAK': 15,
-                'OGARNIETY DYSKRETNIAK': 15,
-                'MISTRZ RUTYNY': 20,
-                'ŚWIATŁO DYSKRECJI': 25,
-                'SWIATLO DYSKRECJI': 25,
-                'DUCHOWNY WETERAN': 30,
-                'LEGENDARNY': 30
-            };
-            
-            if (titleCodes[code]) {
-                // Ustaw passę na odpowiednią liczbę dni
-                const days = titleCodes[code];
-                currentStreak = days;
-                lastStreakDate = new Date().toDateString();
-                
-                // Sprawdź i odblokuj wszystkie tytuły do tego poziomu
-                checkNewTitles();
-                
-                // Zapisz dane
-                saveAllData();
-                
-                // Aktualizuj interfejs
-                updateDrawButton();
-                updateTitlesButton();
-                showStreak();
-                
-                result.innerHTML = `
-                    <div style="font-weight: 700; color: var(--point-blue); margin-bottom: 8px;">🎉 Kod aktywowany!</div>
-                    <div style="font-family: 'Georgia', serif; line-height: 1.5; margin-bottom: 10px;">${dyskretniacCodes[code]}</div>
-                    <div style="background: rgba(34, 197, 94, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #22c55e;">
-                        <strong>🔥 Passa ustawiona na ${days} dni!</strong><br>
-                        Wszystkie tytuły do tego poziomu zostały odblokowane.
-                    </div>
-                `;
-                result.style.display = 'block';
-                
-                // Efekt confetti dla aktywacji kodu
-                createConfetti('#22c55e');
-                
-                // Efekt błysku
-                result.style.animation = 'none';
-                setTimeout(() => {
-                    result.style.animation = 'streakGlow 2s ease-in-out';
-                }, 10);
-                
-            } else if (dyskretniacCodes[code]) {
-                result.innerHTML = `
-                    <div style="font-weight: 700; color: var(--point-blue); margin-bottom: 8px;">✅ Kod znaleziony!</div>
-                    <div style="font-family: 'Georgia', serif; line-height: 1.5;">${dyskretniacCodes[code]}</div>
-                `;
-                result.style.display = 'block';
-                
-                // Efekt błysku przy znalezieniu kodu
-                result.style.animation = 'none';
-                setTimeout(() => {
-                    result.style.animation = 'streakGlow 1s ease-in-out';
-                }, 10);
-            } else {
-                result.innerHTML = `
-                    <div style="font-weight: 700; color: #ef4444; margin-bottom: 8px;">❌ Kod nie znaleziony</div>
-                    <div>Sprawdź pisownię lub spróbuj innego kodu.</div>
-                `;
-                result.style.display = 'block';
-            }
-        }
-
-        // Enter w polu wyszukiwania
-        document.getElementById('codeInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchCode();
-            }
-        });
 
 
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9906cecae288512f',t:'MTc2MDc3NzYzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990734e960ceb659',t:'MTc2MDc4MTgxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

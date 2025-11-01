@@ -19,6 +19,135 @@
             --point-blue: #2b7bd6;
         }
 
+        /* Schematy kolorów */
+        .theme-blue {
+            --bg: #9fc6e2;
+            --bg2: #cfe8f8;
+            --navy: #1e3a8a;
+            --quote-grad-start: #3b5998;
+            --quote-grad-end: #5a8dee;
+            --point-blue: #2b7bd6;
+        }
+
+        .theme-lightblue {
+            --bg: #bfdbfe;
+            --bg2: #dbeafe;
+            --navy: #1e40af;
+            --quote-grad-start: #60a5fa;
+            --quote-grad-end: #3b82f6;
+            --point-blue: #2563eb;
+        }
+
+        .theme-green {
+            --bg: #a7f3d0;
+            --bg2: #d1fae5;
+            --navy: #064e3b;
+            --quote-grad-start: #059669;
+            --quote-grad-end: #10b981;
+            --point-blue: #047857;
+        }
+
+        .theme-moldygreen {
+            --bg: #8b9467;
+            --bg2: #a8b584;
+            --navy: #3d4a2b;
+            --quote-grad-start: #6b7c4f;
+            --quote-grad-end: #5a6b42;
+            --point-blue: #4a5635;
+        }
+
+        .theme-gray {
+            --bg: #e5e7eb;
+            --bg2: #f3f4f6;
+            --navy: #111827;
+            --quote-grad-start: #4b5563;
+            --quote-grad-end: #6b7280;
+            --point-blue: #374151;
+        }
+
+        .theme-blackwhite {
+            --bg: #ffffff;
+            --bg2: #f8f9fa;
+            --navy: #000000;
+            --quote-grad-start: #000000;
+            --quote-grad-end: #333333;
+            --point-blue: #666666;
+        }
+
+        .theme-pink {
+            --bg: #fce7f3;
+            --bg2: #fdf2f8;
+            --navy: #831843;
+            --quote-grad-start: #db2777;
+            --quote-grad-end: #ec4899;
+            --point-blue: #be185d;
+        }
+
+        .theme-orange {
+            --bg: #fed7aa;
+            --bg2: #fef3c7;
+            --navy: #92400e;
+            --quote-grad-start: #f59e0b;
+            --quote-grad-end: #f97316;
+            --point-blue: #d97706;
+        }
+
+        .theme-purple {
+            --bg: #e9d5ff;
+            --bg2: #f3e8ff;
+            --navy: #581c87;
+            --quote-grad-start: #8b5cf6;
+            --quote-grad-end: #a855f7;
+            --point-blue: #7c3aed;
+        }
+
+        .theme-beige {
+            --bg: #f7f3e9;
+            --bg2: #fdf9f1;
+            --navy: #8b4513;
+            --quote-grad-start: #e6d7c3;
+            --quote-grad-end: #d4b896;
+            --point-blue: #c19a6b;
+        }
+
+        .theme-plum {
+            --bg: #ddd6fe;
+            --bg2: #ede9fe;
+            --navy: #581c87;
+            --quote-grad-start: #a855f7;
+            --quote-grad-end: #7c3aed;
+            --point-blue: #8b5cf6;
+        }
+
+        .theme-tea {
+            --bg: #fef3c7;
+            --bg2: #fffbeb;
+            --navy: #a16207;
+            --quote-grad-start: #d97706;
+            --quote-grad-end: #b45309;
+            --point-blue: #ca8a04;
+        }
+
+        .theme-lightrose {
+            --bg: #ffe4e6;
+            --bg2: #fef2f2;
+            --navy: #881337;
+            --quote-grad-start: #f43f5e;
+            --quote-grad-end: #e11d48;
+            --point-blue: #dc2626;
+        }
+
+        .theme-ripepumpkin {
+            --bg: #ff6b35;
+            --bg2: #ffedd5;
+            --navy: #7c2d12;
+            --quote-grad-start: #ea580c;
+            --quote-grad-end: #dc2626;
+            --point-blue: #c2410c;
+        }
+
+
+
         * {
             margin: 0;
             padding: 0;
@@ -52,29 +181,6 @@
             100% {
                 transform: translateX(0) rotateY(0deg);
                 opacity: 1;
-                filter: blur(0px);
-            }
-        }
-
-        @keyframes titleCardSlideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(60px) scale(0.7) rotateX(20deg) rotateZ(-5deg);
-                filter: blur(10px);
-            }
-            30% {
-                opacity: 0.3;
-                transform: translateY(30px) scale(0.85) rotateX(10deg) rotateZ(-2deg);
-                filter: blur(5px);
-            }
-            70% {
-                opacity: 0.8;
-                transform: translateY(-5px) scale(1.05) rotateX(-2deg) rotateZ(1deg);
-                filter: blur(1px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg);
                 filter: blur(0px);
             }
         }
@@ -136,12 +242,37 @@
             filter: brightness(1.2);
         }
 
+
+
         .header {
             text-align: center;
             margin-bottom: 10px;
             padding: 5px 20px 0px 20px;
             position: relative;
             animation: headerFloat 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .settings-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(6,21,52,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .settings-button:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 6px 20px rgba(6,21,52,0.2);
         }
 
         .title {
@@ -214,25 +345,10 @@
             transition: all 0.3s ease;
         }
 
-        @keyframes shimmer {
-            0% { left: -100%; }
-            25% { left: -100%; }
-            100% { left: 100%; }
-        }
-
         .streak-message.title-border {
             border: 3px solid var(--title-color) !important;
             box-shadow: 0 0 20px var(--title-glow);
             background: var(--title-bg);
-        }
-
-        @keyframes streakGlow {
-            from {
-                box-shadow: 0 0 8px rgba(43, 123, 214, 0.3);
-            }
-            to {
-                box-shadow: 0 0 20px rgba(43, 123, 214, 0.5);
-            }
         }
 
         .current-title {
@@ -257,7 +373,8 @@
             margin-top: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: var(--quote-grad-start);
+            background: linear-gradient(135deg, var(--quote-grad-start), var(--quote-grad-end));
         }
 
         .draw-button {
@@ -409,17 +526,6 @@
             overflow: hidden;
         }
 
-        .drawing-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: glassShimmer 1s infinite;
-        }
-
         .drawing-text {
             font-size: 1.2rem;
             font-weight: 700;
@@ -459,14 +565,14 @@
             width: 100%;
             height: 100%;
             background: transparent;
+            backdrop-filter: blur(20px);
             z-index: 10000;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
         .prayer-modal.show {
@@ -475,23 +581,52 @@
         }
 
         .prayer-modal-content {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 30px;
+            background: transparent;
+            border-radius: 24px;
+            padding: 40px;
             max-width: 500px;
             width: 90%;
             max-height: 80%;
             overflow-y: auto;
             backdrop-filter: blur(25px);
-            box-shadow: 0 8px 32px rgba(6,21,52,0.15), 0 4px 16px rgba(255,255,255,0.1);
+            box-shadow: 
+                0 25px 80px rgba(6,21,52,0.08),
+                0 12px 40px rgba(255,255,255,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.4),
+                0 0 60px rgba(255,255,255,0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            transform: scale(0.7) translateY(50px);
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(0.6) translateY(80px) rotateX(15deg);
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
         }
 
+        .prayer-modal-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.6) 0%, 
+                rgba(255,255,255,0.1) 25%, 
+                rgba(255,255,255,0.05) 50%, 
+                rgba(255,255,255,0.1) 75%, 
+                rgba(255,255,255,0.6) 100%);
+            border-radius: 26px;
+            z-index: -1;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+
+
         .prayer-modal.show .prayer-modal-content {
-            transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0) rotateX(0deg);
         }
 
         .prayer-modal-title {
@@ -536,47 +671,60 @@
             width: 100%;
             height: 100%;
             background: transparent;
+            backdrop-filter: blur(20px);
             z-index: 10000;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(3px);
+            transition: all 0.3s ease;
         }
 
         .titles-modal.show {
             opacity: 1;
             visibility: visible;
-            background: transparent;
-            backdrop-filter: blur(8px);
         }
 
         .titles-content {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.25) 0%, 
-                rgba(255, 255, 255, 0.15) 50%, 
-                rgba(255, 255, 255, 0.1) 100%);
+            background: transparent;
             border-radius: 24px;
-            padding: 35px;
-            max-width: 520px;
-            width: 92%;
-            max-height: 85%;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80%;
             overflow-y: auto;
-            backdrop-filter: blur(40px);
+            backdrop-filter: blur(25px);
             box-shadow: 
-                0 20px 60px rgba(6,21,52,0.2),
-                0 8px 32px rgba(255,255,255,0.15),
+                0 25px 80px rgba(6,21,52,0.08),
+                0 12px 40px rgba(255,255,255,0.15),
                 inset 0 1px 0 rgba(255,255,255,0.4),
-                inset 0 -1px 0 rgba(255,255,255,0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transform: scale(0.6) translateY(80px) rotateX(20deg);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+                0 0 60px rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: scale(0.6) translateY(80px) rotateX(15deg);
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
         }
+
+        .titles-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.6) 0%, 
+                rgba(255,255,255,0.1) 25%, 
+                rgba(255,255,255,0.05) 50%, 
+                rgba(255,255,255,0.1) 75%, 
+                rgba(255,255,255,0.6) 100%);
+            border-radius: 26px;
+            z-index: -1;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+
 
         .titles-content::-webkit-scrollbar {
             width: 8px;
@@ -584,20 +732,18 @@
 
         .titles-content::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 4px;
         }
 
         .titles-content::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
         .titles-content::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+            background: rgba(255, 255, 255, 0.5);
         }
-
-
 
         .titles-modal.show .titles-content {
             transform: scale(1) translateY(0) rotateX(0deg);
@@ -605,67 +751,76 @@
 
         .titles-header {
             text-align: center;
-            margin-bottom: 35px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 25px;
         }
 
         .titles-header h2 {
             font-family: 'Pacifico', cursive;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--navy);
-            margin-bottom: 12px;
-            text-shadow: 0 2px 8px rgba(6,21,52,0.3);
+            margin-bottom: 10px;
         }
 
         .titles-subtitle {
             color: var(--navy);
-            opacity: 0.9;
+            opacity: 0.8;
             font-size: 1rem;
-            text-shadow: 0 1px 4px rgba(6,21,52,0.2);
         }
 
         .title-card {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.2) 0%, 
-                rgba(255, 255, 255, 0.1) 50%, 
-                rgba(255, 255, 255, 0.05) 100%);
-            border-radius: 18px;
-            padding: 22px;
-            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(6,21,52,0.1);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(25px);
-            box-shadow: 
-                0 8px 24px rgba(6,21,52,0.15),
-                0 4px 12px rgba(255,255,255,0.1),
-                inset 0 1px 0 rgba(255,255,255,0.3);
             opacity: 0;
-            transform: translateY(50px) scale(0.8) rotateX(15deg);
-            animation: titleCardSlideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            z-index: 2;
+            transform: translateX(30px) rotateY(10deg);
+            animation: slideInCard 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-
-
         .title-card:hover {
-            transform: translateY(-8px) scale(1.03) rotateX(-2deg);
-            box-shadow: 
-                0 20px 50px rgba(6,21,52,0.25),
-                0 10px 25px rgba(255,255,255,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            transform: translateY(-8px) rotateY(5deg) scale(1.02);
+            box-shadow: 0 15px 40px rgba(6,21,52,0.2);
+            filter: brightness(1.05);
+        }
+
+        @keyframes slideInCard {
+            0% {
+                opacity: 0;
+                transform: translateX(60px) rotateY(25deg) scale(0.8);
+                filter: blur(8px);
+            }
+            30% {
+                opacity: 0.6;
+                transform: translateX(-15px) rotateY(-8deg) scale(1.05);
+                filter: blur(3px);
+            }
+            70% {
+                opacity: 0.9;
+                transform: translateX(5px) rotateY(3deg) scale(1.02);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg) scale(1);
+                filter: blur(0px);
+            }
         }
 
         .title-card.unlocked {
-            border: 2px solid rgba(34, 197, 94, 0.5);
-            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+        }
+
+        .title-card.unlocked:hover {
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
         }
 
         .title-card.locked {
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         .title-name {
@@ -682,8 +837,6 @@
             position: relative;
             z-index: 2;
         }
-
-
 
         .title-icon {
             width: 32px;
@@ -702,7 +855,8 @@
         }
 
         .title-icon:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.2) rotate(15deg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .title-icon img {
@@ -739,17 +893,6 @@
             position: relative;
         }
 
-        .title-progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            animation: glassShimmer 3s infinite;
-        }
-
         .title-progress-bar.animated {
             background: linear-gradient(270deg, #6b7280, #111827, #374151, #6b7280);
             background-size: 400% 400%;
@@ -784,14 +927,690 @@
             color: var(--navy);
             opacity: 0.7;
             transition: all 0.3s ease;
-            z-index: 3;
-            animation: rotateGlow 12s linear infinite;
         }
 
         .close-modal:hover {
             opacity: 1;
-            transform: scale(1.2) rotate(90deg);
+            transform: scale(1.2);
         }
+
+        .settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .settings-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .settings-content {
+            background: transparent;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            backdrop-filter: blur(25px);
+            box-shadow: 
+                0 25px 80px rgba(6,21,52,0.08),
+                0 12px 40px rgba(255,255,255,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.4),
+                0 0 60px rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: scale(0.6) translateY(80px) rotateX(15deg);
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .settings-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.6) 0%, 
+                rgba(255,255,255,0.1) 25%, 
+                rgba(255,255,255,0.05) 50%, 
+                rgba(255,255,255,0.1) 75%, 
+                rgba(255,255,255,0.6) 100%);
+            border-radius: 26px;
+            z-index: -1;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .settings-modal.show .settings-content {
+            transform: scale(1) translateY(0) rotateX(0deg);
+        }
+
+        .settings-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .settings-header h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .settings-subtitle {
+            color: var(--navy);
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        .settings-section {
+            margin-bottom: 30px;
+        }
+
+        .settings-section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .toggle-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .toggle-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 15px;
+        }
+
+        .toggle-label input[type="checkbox"] {
+            display: none;
+        }
+
+        .toggle-slider {
+            width: 60px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-label input[type="checkbox"]:checked + .toggle-slider {
+            background: var(--point-blue);
+        }
+
+        .toggle-label input[type="checkbox"]:checked + .toggle-slider::before {
+            transform: translateX(30px);
+        }
+
+
+
+
+
+        .color-schemes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .color-scheme {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-scheme:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-scheme.active {
+            border-color: var(--point-blue);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(43, 123, 214, 0.3);
+        }
+
+        .color-preview {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
+                        0 2px 8px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .color-scheme span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-align: center;
+            opacity: 1;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Specjalne kolory za passę */
+        .special-color {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .special-color.unlocked {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .rainbow-preview {
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3) !important;
+            animation: rainbowRotate 3s linear infinite;
+        }
+
+        @keyframes rainbowRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .pink-gradient-preview {
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #dc143c, #ff6347, #ffa500, #ff69b4, #ff1493) !important;
+            background-size: 400% 400%;
+            animation: pinkFlow 4s ease-in-out infinite;
+        }
+
+        @keyframes pinkFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .metallic-gold-preview {
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff700, #ffc107, #ff8f00, #ffd700, #ffed4e) !important;
+            background-size: 400% 400%;
+            animation: goldShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        }
+
+        @keyframes goldShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1) saturate(1.2);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.3) saturate(1.5);
+            }
+        }
+
+        .metallic-silver-preview {
+            background: linear-gradient(45deg, #c0c0c0, #e5e5e5, #f5f5f5, #d3d3d3, #a9a9a9, #c0c0c0, #e5e5e5) !important;
+            background-size: 400% 400%;
+            animation: silverShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        }
+
+        @keyframes silverShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1) saturate(0.8);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.4) saturate(1.1);
+            }
+        }
+
+        .metallic-diamond-preview {
+            background: linear-gradient(45deg, #e8f4fd, #b8e6ff, #87ceeb, #4682b4, #1e90ff, #e8f4fd, #b8e6ff) !important;
+            background-size: 400% 400%;
+            animation: diamondShine 2s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(135, 206, 235, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+        }
+
+        @keyframes diamondShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1.1) saturate(1.3) contrast(1.2);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.5) saturate(1.8) contrast(1.5);
+            }
+        }
+
+        .metallic-green-preview {
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d, #166534, #14532d, #22c55e, #16a34a) !important;
+            background-size: 400% 400%;
+            animation: greenShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        }
+
+        @keyframes greenShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1) saturate(1.2);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.3) saturate(1.5);
+            }
+        }
+
+        .metallic-copper-preview {
+            background: linear-gradient(45deg, #b45309, #d97706, #ea580c, #f97316, #fb923c, #b45309, #d97706) !important;
+            background-size: 400% 400%;
+            animation: copperShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(180, 83, 9, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        }
+
+        @keyframes copperShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1) saturate(1.2);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.3) saturate(1.5);
+            }
+        }
+
+        .extra-metallic-preview {
+            background: linear-gradient(45deg, #ffffff, #f8f9fa, #dc2626, #fbbf24, #3b82f6, #ffffff, #f8f9fa) !important;
+            background-size: 400% 400%;
+            animation: extraMetallicShine 2.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+        }
+
+        @keyframes extraMetallicShine {
+            0%, 100% { 
+                background-position: 0% 50%; 
+                filter: brightness(1.2) saturate(1.4) contrast(1.3);
+            }
+            50% { 
+                background-position: 100% 50%; 
+                filter: brightness(1.6) saturate(1.8) contrast(1.6);
+            }
+        }
+
+        /* Tęczowy schemat kolorów */
+        .theme-rainbow {
+            --bg: #ff6b6b;
+            --bg2: #4ecdc4;
+            --navy: #2c3e50;
+            --quote-grad-start: #ff6b6b;
+            --quote-grad-end: #4ecdc4;
+            --point-blue: #3498db;
+        }
+
+        .theme-rainbow .card,
+        .theme-rainbow .title-card {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-rainbow .card::before,
+        .theme-rainbow .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            border-radius: inherit;
+            z-index: -1;
+            animation: rainbowRotate 3s linear infinite;
+        }
+
+        .theme-rainbow .draw-button,
+        .theme-rainbow .titles-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7) !important;
+            background-size: 400% 400% !important;
+            animation: rainbowFlow 3s ease infinite !important;
+        }
+
+        @keyframes rainbowFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Różowy gradient schemat kolorów */
+        .theme-pinkgradient {
+            --bg: #ff69b4;
+            --bg2: #ffb6c1;
+            --navy: #8b008b;
+            --quote-grad-start: #ff1493;
+            --quote-grad-end: #ff69b4;
+            --point-blue: #da70d6;
+        }
+
+        .theme-pinkgradient .card,
+        .theme-pinkgradient .title-card {
+            background: linear-gradient(135deg, rgba(255,105,180,0.1), rgba(255,182,193,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-pinkgradient .card::before,
+        .theme-pinkgradient .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #dc143c, #ff6347, #ffa500, #ff69b4, #ff1493);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: pinkFlow 4s ease-in-out infinite;
+        }
+
+        .theme-pinkgradient .draw-button,
+        .theme-pinkgradient .titles-button {
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #dc143c, #ff6347, #ffa500) !important;
+            background-size: 400% 400% !important;
+            animation: pinkFlow 4s ease-in-out infinite !important;
+        }
+
+        /* Metaliczny złoty schemat kolorów */
+        .theme-metallicgold {
+            --bg: #ffd700;
+            --bg2: #fff8dc;
+            --navy: #8b4513;
+            --quote-grad-start: #ffd700;
+            --quote-grad-end: #ff8f00;
+            --point-blue: #ff8f00;
+        }
+
+        .theme-metallicgold .card,
+        .theme-metallicgold .title-card {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,248,220,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-metallicgold .card::before,
+        .theme-metallicgold .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff700, #ffc107, #ff8f00, #ffd700, #ffed4e);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: goldShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .theme-metallicgold .draw-button,
+        .theme-metallicgold .titles-button {
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff700, #ffc107, #ff8f00) !important;
+            background-size: 400% 400% !important;
+            animation: goldShine 3s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.2) !important;
+        }
+
+        /* Metaliczny srebrny schemat kolorów */
+        .theme-metallicsilver {
+            --bg: #c0c0c0;
+            --bg2: #f5f5f5;
+            --navy: #2f2f2f;
+            --quote-grad-start: #c0c0c0;
+            --quote-grad-end: #a9a9a9;
+            --point-blue: #808080;
+        }
+
+        .theme-metallicsilver .card,
+        .theme-metallicsilver .title-card {
+            background: linear-gradient(135deg, rgba(192,192,192,0.1), rgba(245,245,245,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-metallicsilver .card::before,
+        .theme-metallicsilver .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #c0c0c0, #e5e5e5, #f5f5f5, #d3d3d3, #a9a9a9, #c0c0c0, #e5e5e5);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: silverShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+        }
+
+        .theme-metallicsilver .draw-button,
+        .theme-metallicsilver .titles-button {
+            background: linear-gradient(45deg, #c0c0c0, #e5e5e5, #f5f5f5, #d3d3d3, #a9a9a9) !important;
+            background-size: 400% 400% !important;
+            animation: silverShine 3s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.4), 0 0 30px rgba(192, 192, 192, 0.2) !important;
+        }
+
+        /* Metaliczny diamentowy schemat kolorów */
+        .theme-metallicdiamond {
+            --bg: #e8f4fd;
+            --bg2: #f0f8ff;
+            --navy: #1e3a8a;
+            --quote-grad-start: #87ceeb;
+            --quote-grad-end: #4682b4;
+            --point-blue: #1e90ff;
+        }
+
+        .theme-metallicdiamond .card,
+        .theme-metallicdiamond .title-card {
+            background: linear-gradient(135deg, rgba(232,244,253,0.1), rgba(240,248,255,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-metallicdiamond .card::before,
+        .theme-metallicdiamond .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #e8f4fd, #b8e6ff, #87ceeb, #4682b4, #1e90ff, #e8f4fd, #b8e6ff);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: diamondShine 2s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(135, 206, 235, 0.4);
+        }
+
+        .theme-metallicdiamond .draw-button,
+        .theme-metallicdiamond .titles-button {
+            background: linear-gradient(45deg, #e8f4fd, #b8e6ff, #87ceeb, #4682b4, #1e90ff) !important;
+            background-size: 400% 400% !important;
+            animation: diamondShine 2s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(135, 206, 235, 0.5), 0 0 35px rgba(135, 206, 235, 0.3) !important;
+        }
+
+        /* Metaliczny zielony schemat kolorów */
+        .theme-metallicgreen {
+            --bg: #22c55e;
+            --bg2: #dcfce7;
+            --navy: #14532d;
+            --quote-grad-start: #22c55e;
+            --quote-grad-end: #16a34a;
+            --point-blue: #15803d;
+        }
+
+        .theme-metallicgreen .card,
+        .theme-metallicgreen .title-card {
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(220,252,231,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-metallicgreen .card::before,
+        .theme-metallicgreen .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d, #166534, #14532d, #22c55e, #16a34a);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: greenShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .theme-metallicgreen .draw-button,
+        .theme-metallicgreen .titles-button {
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d, #166534, #14532d) !important;
+            background-size: 400% 400% !important;
+            animation: greenShine 3s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2) !important;
+        }
+
+        /* Metaliczny miedziany schemat kolorów */
+        .theme-metalliccopper {
+            --bg: #ea580c;
+            --bg2: #fed7aa;
+            --navy: #9a3412;
+            --quote-grad-start: #ea580c;
+            --quote-grad-end: #d97706;
+            --point-blue: #c2410c;
+        }
+
+        .theme-metalliccopper .card,
+        .theme-metalliccopper .title-card {
+            background: linear-gradient(135deg, rgba(234,88,12,0.1), rgba(254,215,170,0.1)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-metalliccopper .card::before,
+        .theme-metalliccopper .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #b45309, #d97706, #ea580c, #f97316, #fb923c, #b45309, #d97706);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: copperShine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(180, 83, 9, 0.3);
+        }
+
+        .theme-metalliccopper .draw-button,
+        .theme-metalliccopper .titles-button {
+            background: linear-gradient(45deg, #b45309, #d97706, #ea580c, #f97316, #fb923c) !important;
+            background-size: 400% 400% !important;
+            animation: copperShine 3s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(180, 83, 9, 0.4), 0 0 30px rgba(180, 83, 9, 0.2) !important;
+        }
+
+        /* Extra Metaliczny schemat kolorów */
+        .theme-extrametallic {
+            --bg: #ffffff;
+            --bg2: #f8f9fa;
+            --navy: #1e293b;
+            --quote-grad-start: #dc2626;
+            --quote-grad-end: #3b82f6;
+            --point-blue: #fbbf24;
+        }
+
+        .theme-extrametallic .card,
+        .theme-extrametallic .title-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)) !important;
+            border: 2px solid transparent !important;
+            background-clip: padding-box !important;
+            position: relative;
+        }
+
+        .theme-extrametallic .card::before,
+        .theme-extrametallic .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ffffff, #f8f9fa, #dc2626, #fbbf24, #3b82f6, #ffffff, #f8f9fa);
+            background-size: 400% 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: extraMetallicShine 2.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+        }
+
+        .theme-extrametallic .draw-button,
+        .theme-extrametallic .titles-button {
+            background: linear-gradient(45deg, #ffffff, #dc2626, #fbbf24, #3b82f6, #ffffff) !important;
+            background-size: 400% 400% !important;
+            animation: extraMetallicShine 2.5s ease-in-out infinite !important;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5), 0 0 35px rgba(220, 38, 38, 0.3) !important;
+            color: #1e293b !important;
+        }
+
+
 
         @keyframes titlePop {
             0% {
@@ -828,6 +1647,32 @@
             100% {
                 transform: translateY(100vh) rotate(720deg) scale(0.5);
                 opacity: 0;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-100px) scale(0.8);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateX(-50%) translateY(10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes slideOutToTop {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-100px) scale(0.8);
             }
         }
 
@@ -888,7 +1733,7 @@
                 padding: 15px;
             }
 
-            .titles-content, .prayer-modal-content {
+            .titles-content, .prayer-modal-content, .settings-content {
                 padding: 20px;
                 width: 95%;
                 max-height: 85%;
@@ -897,6 +1742,32 @@
             .titles-header h2 {
                 font-size: 1.8rem;
             }
+
+            .settings-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .color-schemes {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .color-scheme {
+                padding: 10px;
+            }
+
+            .color-preview {
+                width: 35px;
+                height: 35px;
+            }
+
+            .settings-button {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -908,7 +1779,7 @@
   <div class="container">
    <div class="header">
     <h1 class="title">Dyskretna Intencja</h1>
-    <p class="subtitle">Codzienna modlitwa i intencja o północy</p>
+    <p class="subtitle">Codzienna modlitwa i intencja o północy</p><button class="settings-button" onclick="showSettingsModal()">⚙️</button>
    </div>
    <div class="card">
     <div class="status-section">
@@ -945,12 +1816,96 @@
     <div class="prayer-modal-title" id="prayerModalTitle"></div>
     <div class="prayer-modal-text" id="prayerModalText"></div>
    </div>
+  </div><!-- Modal ustawień -->
+  <div class="settings-modal" id="settingsModal">
+   <div class="settings-content"><button class="close-modal" onclick="hideSettingsModal()">×</button>
+    <div class="settings-header">
+     <h2>⚙️ Ustawienia</h2>
+     <p class="settings-subtitle">Dostosuj wygląd aplikacji</p>
+    </div>
+    <div class="settings-section">
+     <h3 class="settings-section-title">Schemat kolorów</h3>
+     <div class="color-schemes">
+      <div class="color-scheme" data-theme="blue" onclick="changeColorScheme('blue')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #9fc6e2, #3b5998);"></div><span>Niebieski</span>
+      </div>
+      <div class="color-scheme" data-theme="lightblue" onclick="changeColorScheme('lightblue')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #bfdbfe, #60a5fa);"></div><span>Jasny błękit</span>
+      </div>
+      <div class="color-scheme" data-theme="green" onclick="changeColorScheme('green')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #a7f3d0, #059669);"></div><span>Zielony</span>
+      </div>
+      <div class="color-scheme" data-theme="moldygreen" onclick="changeColorScheme('moldygreen')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #8b9467, #6b7c4f);"></div><span>Spleśniała zieleń</span>
+      </div>
+      <div class="color-scheme" data-theme="gray" onclick="changeColorScheme('gray')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #e5e7eb, #4b5563);"></div><span>Szary</span>
+      </div>
+      <div class="color-scheme" data-theme="blackwhite" onclick="changeColorScheme('blackwhite')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #ffffff, #000000);"></div><span>Czarno-biały</span>
+      </div>
+      <div class="color-scheme" data-theme="pink" onclick="changeColorScheme('pink')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #fce7f3, #db2777);"></div><span>Różowy</span>
+      </div>
+      <div class="color-scheme" data-theme="lightrose" onclick="changeColorScheme('lightrose')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #ffe4e6, #f43f5e);"></div><span>Jasny Różany</span>
+      </div>
+      <div class="color-scheme" data-theme="orange" onclick="changeColorScheme('orange')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #fed7aa, #f59e0b);"></div><span>Pomarańczowy</span>
+      </div>
+      <div class="color-scheme" data-theme="ripepumpkin" onclick="changeColorScheme('ripepumpkin')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #ff6b35, #dc2626);"></div><span>Dojrzała Dynia</span>
+      </div>
+      <div class="color-scheme" data-theme="purple" onclick="changeColorScheme('purple')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #e9d5ff, #8b5cf6);"></div><span>Fioletowy</span>
+      </div>
+      <div class="color-scheme" data-theme="beige" onclick="changeColorScheme('beige')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #f7f3e9, #e6d7c3);"></div><span>Beżowy</span>
+      </div>
+      <div class="color-scheme" data-theme="plum" onclick="changeColorScheme('plum')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #ddd6fe, #581c87);"></div><span>Śliwkowy</span>
+      </div>
+      <div class="color-scheme" data-theme="tea" onclick="changeColorScheme('tea')">
+       <div class="color-preview" style="background: linear-gradient(135deg, #fef3c7, #a16207);"></div><span>Herbaciany</span>
+      </div>
+     </div>
+    </div>
+    <div class="settings-section">
+     <h3 class="settings-section-title">🌈 Specjalne kolory za passę</h3>
+     <div class="color-schemes" id="specialColors">
+      <div class="color-scheme special-color" data-theme="metallicgreen" data-required="5" onclick="changeColorScheme('metallicgreen')">
+       <div class="color-preview metallic-green-preview"></div><span>Metaliczny zielony (5 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="pinkgradient" data-required="10" onclick="changeColorScheme('pinkgradient')">
+       <div class="color-preview pink-gradient-preview"></div><span>Różowy gradient (10 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="metallicsilver" data-required="15" onclick="changeColorScheme('metallicsilver')">
+       <div class="color-preview metallic-silver-preview"></div><span>Metaliczny srebrny (15 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="metalliccopper" data-required="20" onclick="changeColorScheme('metalliccopper')">
+       <div class="color-preview metallic-copper-preview"></div><span>Metaliczny miedziany (20 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="metallicdiamond" data-required="25" onclick="changeColorScheme('metallicdiamond')">
+       <div class="color-preview metallic-diamond-preview"></div><span>Metaliczny diamentowy (25 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="metallicgold" data-required="40" onclick="changeColorScheme('metallicgold')">
+       <div class="color-preview metallic-gold-preview"></div><span>Metaliczny złoty (40 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="rainbow" data-required="50" onclick="changeColorScheme('rainbow')">
+       <div class="color-preview rainbow-preview"></div><span>Tęczowy (50 dni)</span>
+      </div>
+      <div class="color-scheme special-color" data-theme="extrametallic" data-required="60" onclick="changeColorScheme('extrametallic')">
+       <div class="color-preview extra-metallic-preview"></div><span>Extra Metaliczny (60 dni)</span>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
   <script>
         const prayers = [
             {
                 title: "Ojcze nasz",
-                text: "Ojcze nasz, któryś jest w niebie,\nświięć się Imię Twoje,\nprzyj­dź Królestwo Twoje,\nbądź wola Twoja jako w niebie, tak i na ziemi.\nChleba naszego powszedniego daj nam dzisiaj\ni odpuść nam nasze winy,\njako i my odpuszczamy naszym winowajcom.\nI nie wódź nas na pokuszenie,\nale nas zbaw ode złego. Amen."
+                text: "Ojcze nasz, któryś jest w niebie,\nświęć się Imię Twoje,\nprzyj­dź Królestwo Twoje,\nbądź wola Twoja jako w niebie, tak i na ziemi.\nChleba naszego powszedniego daj nam dzisiaj\ni odpuść nam nasze winy,\njako i my odpuszczamy naszym winowajcom.\nI nie wódź nas na pokuszenie,\nale nas zbaw ode złego. Amen."
             },
             {
                 title: "Zdrowaś Maryjo",
@@ -1047,6 +2002,10 @@
             "Za wszystkich wiernych zmarłych"
         ];
 
+        // Globalne zmienne
+        let lastDrawDate, todaysPrayer, todaysIntention, drawHistory, currentStreak, lastStreakDate, unlockedTitles;
+        let currentPrayerData = null;
+
         // Funkcja bezpiecznego ładowania danych z localStorage
         function loadData() {
             try {
@@ -1056,15 +2015,12 @@
                 const historyData = localStorage.getItem('drawHistory');
                 drawHistory = historyData ? JSON.parse(historyData) : [];
                 
-                // Załaduj passę
                 currentStreak = parseInt(localStorage.getItem('currentStreak') || '0');
                 lastStreakDate = localStorage.getItem('lastStreakDate');
                 
-                // Załaduj zdobyte tytuły
                 const unlockedTitlesData = localStorage.getItem('unlockedTitles');
                 unlockedTitles = unlockedTitlesData ? JSON.parse(unlockedTitlesData) : [];
                 
-                // Sprawdź czy passa się nie zerwała (ale tylko jeśli minęło więcej niż 2 dni)
                 checkStreakContinuity();
                 
                 console.log('Załadowane dane:', {
@@ -1083,8 +2039,6 @@
             }
         }
 
-        let lastDrawDate, todaysPrayer, todaysIntention, drawHistory, currentStreak, lastStreakDate, unlockedTitles;
-        
         // Załaduj dane przy starcie
         loadData();
 
@@ -1096,7 +2050,6 @@
             const diffTime = Math.abs(today - lastDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
-            // Jeśli minęło więcej niż 2 dni, zresetuj passę (dajemy 1 dzień tolerancji)
             if (diffDays > 2) {
                 currentStreak = 0;
                 console.log('Passa zresetowana - minęło więcej niż 48h');
@@ -1114,8 +2067,15 @@
             { days: 35, name: "Świadek Tajemnicy", gradient: "linear-gradient(135deg, #60a5fa, #1e40af)", borderColor: "#60a5fa", glowColor: "rgba(96, 165, 250, 0.3)", icon: "zdjęcie_8.png", unlocked: false },
             { days: 40, name: "Wytrawny Skromniak", gradient: "linear-gradient(135deg, #a855f7, #ec4899)", borderColor: "#a855f7", glowColor: "rgba(168, 85, 247, 0.3)", icon: "zdjęcie_9.png", unlocked: false },
             { days: 45, name: "Zakulisowy Modlitewnik", gradient: "linear-gradient(135deg, #ef4444, #fbbf24)", borderColor: "#ef4444", glowColor: "rgba(239, 68, 68, 0.3)", icon: "zdjęcie_10.png", unlocked: false },
-            { days: 55, name: "Niewidoczny ale skuteczny", gradient: "linear-gradient(135deg, #6b7280, #111827)", borderColor: "#6b7280", glowColor: "rgba(107, 114, 128, 0.3)", icon: "zdjęcie_11.png", unlocked: false, animated: true }
+            { days: 50, name: "Niewidoczny ale skuteczny", gradient: "linear-gradient(135deg, #6b7280, #111827)", borderColor: "#6b7280", glowColor: "rgba(107, 114, 128, 0.3)", icon: "zdjęcie_11.png", unlocked: false, animated: true },
+            { days: 55, name: "Cichy Przewodnik", gradient: "linear-gradient(135deg, #22c55e, #16a34a)", borderColor: "#22c55e", glowColor: "rgba(34, 197, 94, 0.3)", icon: "zdjęcie_12.png", unlocked: false },
+            { days: 60, name: "Latarnia Modlitwy", gradient: "linear-gradient(135deg, #0ea5e9, #94a3b8)", borderColor: "#0ea5e9", glowColor: "rgba(14, 165, 233, 0.3)", icon: "zdjęcie_13.png", unlocked: false },
+            { days: 65, name: "Strażnik Spokoju", gradient: "linear-gradient(135deg, #14b8a6, #0891b2)", borderColor: "#14b8a6", glowColor: "rgba(20, 184, 166, 0.3)", icon: "zdjęcie_14.png", unlocked: false },
+            { days: 70, name: "Kroczący Światłem Modlitwy", gradient: "linear-gradient(135deg, #06b6d4, #94a3b8)", borderColor: "#06b6d4", glowColor: "rgba(6, 182, 212, 0.3)", icon: "zdjęcie_15.png", unlocked: false },
+            { days: 75, name: "Dyskretniacki Pielgrzym", gradient: "linear-gradient(135deg, #a16207, #eab308)", borderColor: "#a16207", glowColor: "rgba(161, 98, 7, 0.3)", icon: "zdjęcie_16.png", unlocked: false }
         ];
+
+
 
         function updateStreak() {
             const today = new Date().toDateString();
@@ -1123,17 +2083,13 @@
             yesterday.setDate(yesterday.getDate() - 1);
             const yesterdayStr = yesterday.toDateString();
             
-            // Jeśli to pierwsze losowanie lub losowanie następnego dnia po poprzednim
             if (!lastStreakDate || lastStreakDate === yesterdayStr) {
                 currentStreak++;
             } else if (lastStreakDate !== today) {
-                // Jeśli była przerwa, zresetuj passę
                 currentStreak = 1;
             }
             
             lastStreakDate = today;
-            
-            // Sprawdź czy odblokowano nowe tytuły
             checkNewTitles();
         }
 
@@ -1145,17 +2101,15 @@
                 }
             });
             
-            // Aktualizuj wygląd przycisków po zdobyciu nowych tytułów
             updateDrawButton();
             updateTitlesButton();
+            updateSpecialColors();
             showStreak();
         }
 
         function showTitleUnlocked(title) {
-            // Uruchom confetti w kolorze tytułu
             createConfetti(title.borderColor);
             
-            // Pokaż powiadomienie o nowym tytule
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -1171,19 +2125,28 @@
                 z-index: 10000;
                 box-shadow: 0 8px 32px rgba(0,0,0,0.3);
                 animation: titlePop 3s ease-out forwards;
+                transition: all 0.5s ease;
             `;
             notification.innerHTML = `🏆 Nowy tytuł odblokowany!<br>"${title.name}"`;
             
             document.body.appendChild(notification);
             
+            // Zmiana kolorów co 0.5 sekundy
+            const colorInterval = setInterval(() => {
+                const randomTitle = titles[Math.floor(Math.random() * titles.length)];
+                notification.style.background = randomTitle.gradient;
+                notification.style.boxShadow = `0 8px 32px ${randomTitle.glowColor}`;
+            }, 500);
+            
             setTimeout(() => {
+                clearInterval(colorInterval);
                 notification.remove();
             }, 3000);
         }
 
         function createConfetti(color) {
             const confettiCount = 50;
-            const colors = [color, '#ffffff', '#ffd700']; // Główny kolor + biały + złoty
+            const colors = [color, '#ffffff', '#ffd700'];
             
             for (let i = 0; i < confettiCount; i++) {
                 setTimeout(() => {
@@ -1222,7 +2185,6 @@
         }
 
         function showUpcomingTitleNotification() {
-            // Znajdź następny tytuł do zdobycia
             const nextTitle = titles.find(title => 
                 !unlockedTitles.includes(title.name) && title.days > currentStreak
             );
@@ -1231,7 +2193,6 @@
             
             const daysLeft = nextTitle.days - currentStreak;
             
-            // Pokaż powiadomienie tylko gdy zostało 3, 2 lub 1 dzień
             if (daysLeft <= 3 && daysLeft > 0) {
                 let notificationElement = document.getElementById('upcomingTitleNotification');
                 
@@ -1249,7 +2210,6 @@
                 notificationElement.textContent = message;
                 notificationElement.style.display = 'block';
             } else {
-                // Ukryj powiadomienie jeśli nie jest potrzebne
                 const notificationElement = document.getElementById('upcomingTitleNotification');
                 if (notificationElement) {
                     notificationElement.style.display = 'none';
@@ -1301,6 +2261,7 @@
 
         function getHighestUnlockedTitle() {
             let highestTitle = null;
+            
             titles.forEach(title => {
                 if (unlockedTitles.includes(title.name)) {
                     if (!highestTitle || title.days > highestTitle.days) {
@@ -1308,6 +2269,7 @@
                     }
                 }
             });
+            
             return highestTitle;
         }
 
@@ -1316,8 +2278,8 @@
             if (lastDrawDate === today && todaysPrayer && todaysIntention) {
                 const resultsArea = document.getElementById('resultsArea');
                 
-                // Znajdź obiekt modlitwy na podstawie tytułu
                 const prayerObj = prayers.find(p => p.title === todaysPrayer) || { title: todaysPrayer, text: todaysPrayer };
+                currentPrayerData = prayerObj;
                 
                 resultsArea.innerHTML = `
                     <div class="result-card show">
@@ -1334,7 +2296,7 @@
                         </div>
                         <div class="result-content">
                             <div class="prayer-title">${prayerObj.title}</div>
-                            <div class="prayer-subtitle" onclick="showPrayerModal('${prayerObj.title}', \`${prayerObj.text}\`)">naciśnij aby wyświetlić pełny tekst</div>
+                            <div class="prayer-subtitle" onclick="openPrayerModal()">naciśnij aby wyświetlić pełny tekst</div>
                         </div>
                     </div>
                 `;
@@ -1359,7 +2321,6 @@
                     streakElement.style.setProperty('--title-glow', highestTitle.glowColor);
                     streakElement.style.setProperty('--title-bg', highestTitle.borderColor + '15');
                     
-                    // Pokaż aktualny tytuł
                     titleElement.textContent = highestTitle.name;
                     if (highestTitle.animated) {
                         titleElement.className = 'current-title animated';
@@ -1377,12 +2338,17 @@
                 }
             }
             
-            // Pokaż powiadomienie o zbliżającym się tytule
             showUpcomingTitleNotification();
         }
 
         function showCountdown() {
             document.getElementById('countdownSection').style.display = 'block';
+        }
+
+        function openPrayerModal() {
+            if (currentPrayerData) {
+                showPrayerModal(currentPrayerData.title, currentPrayerData.text);
+            }
         }
 
         function showPrayerModal(title, text) {
@@ -1405,7 +2371,6 @@
             
             resultsArea.innerHTML = '';
             
-            // Najpierw losowanie intencji
             drawingArea.innerHTML = `
                 <div class="drawing-animation">
                     <div class="drawing-text" id="drawingText">Losuję intencję...</div>
@@ -1423,7 +2388,6 @@
                 clearInterval(intentionInterval);
                 const selectedIntention = intentions[Math.floor(Math.random() * intentions.length)];
                 
-                // Potem losowanie modlitwy
                 drawingArea.innerHTML = `
                     <div class="drawing-animation">
                         <div class="drawing-text" id="drawingText2">Losuję modlitwę...</div>
@@ -1440,19 +2404,17 @@
                 setTimeout(() => {
                     clearInterval(prayerInterval);
                     const selectedPrayer = prayers[Math.floor(Math.random() * prayers.length)];
+                    currentPrayerData = selectedPrayer;
                     
                     drawingArea.innerHTML = '';
                     
-                    // Zapisz wyniki
                     const today = new Date().toDateString();
                     lastDrawDate = today;
                     todaysPrayer = selectedPrayer.title;
                     todaysIntention = selectedIntention;
                     
-                    // Aktualizuj passę
                     updateStreak();
                     
-                    // Dodaj do historii
                     drawHistory.unshift({
                         date: today,
                         prayer: selectedPrayer.title,
@@ -1464,10 +2426,8 @@
                         drawHistory = drawHistory.slice(0, 10);
                     }
                     
-                    // Zapisz wszystko do localStorage
                     saveAllData();
                     
-                    // Pokaż wyniki - najpierw intencja, potem modlitwa
                     resultsArea.innerHTML = `
                         <div class="result-card">
                             <div class="result-title">
@@ -1483,7 +2443,7 @@
                             </div>
                             <div class="result-content">
                                 <div class="prayer-title">${selectedPrayer.title}</div>
-                                <div class="prayer-subtitle" onclick="showPrayerModal('${selectedPrayer.title}', \`${selectedPrayer.text}\`)">naciśnij aby wyświetlić pełny tekst</div>
+                                <div class="prayer-subtitle" onclick="openPrayerModal()">naciśnij aby wyświetlić pełny tekst</div>
                             </div>
                         </div>
                     `;
@@ -1501,15 +2461,20 @@
             }, 3000);
         }
 
-        // Inicjalizacja - załaduj dane ponownie i wyświetl
+        // Ustaw domyślny schemat kolorów przy starcie
+        document.documentElement.classList.add('theme-blue');
+        document.body.classList.add('theme-blue');
+
         window.addEventListener('load', function() {
             loadData();
+            loadSettings();
             updateDrawButton();
             updateTitlesButton();
             showTodaysResults();
         });
+
+
         
-        // Uruchom inicjalizację od razu
         updateDrawButton();
         updateTitlesButton();
         showTodaysResults();
@@ -1517,13 +2482,11 @@
         
         setInterval(updateCountdown, 1000);
         
-        // Sprawdź o północy czy można losować i zapisuj dane regularnie
         setInterval(() => {
             const now = new Date();
             if (now.getHours() === 0 && now.getMinutes() === 0) {
                 updateDrawButton();
             }
-            // Zapisuj dane co minutę dla pewności
             saveAllData();
         }, 60000);
 
@@ -1552,11 +2515,14 @@
         function updateTitlesDisplay() {
             const container = document.getElementById('titlesContainer');
             
-            container.innerHTML = titles.map((title, index) => {
+            const unlockedTitles_html = [];
+            const lockedTitles_html = [];
+            
+            titles.forEach((title, index) => {
                 const isUnlocked = unlockedTitles.includes(title.name);
                 const progress = Math.min((currentStreak / title.days) * 100, 100);
                 
-                return `
+                const titleHtml = `
                     <div class="title-card ${isUnlocked ? 'unlocked' : 'locked'}" style="--gradient: ${title.gradient}; animation-delay: ${index * 0.1}s;">
                         <div class="title-name ${title.animated ? 'animated' : ''}" style="${!title.animated ? `background: ${title.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;` : ''}">
                             <div class="title-icon">
@@ -1575,10 +2541,143 @@
                         </div>
                     </div>
                 `;
-            }).join('');
+                
+                if (isUnlocked) {
+                    unlockedTitles_html.push(titleHtml);
+                } else {
+                    lockedTitles_html.push(titleHtml);
+                }
+            });
+            
+            const allTitles = lockedTitles_html.concat(unlockedTitles_html);
+            
+            container.innerHTML = allTitles.join('');
         }
 
-        // Zamknij modal po kliknięciu w tło
+        // Funkcje ustawień
+        function showSettingsModal() {
+            loadSettings();
+            document.getElementById('settingsModal').classList.add('show');
+        }
+
+        function hideSettingsModal() {
+            document.getElementById('settingsModal').classList.remove('show');
+        }
+
+
+
+        function changeColorScheme(theme) {
+            // Sprawdź czy to specjalny kolor i czy jest odblokowany
+            const specialScheme = document.querySelector(`[data-theme="${theme}"].special-color`);
+            if (specialScheme) {
+                const requiredDays = parseInt(specialScheme.dataset.required);
+                if (currentStreak < requiredDays) {
+                    // Pokaż komunikat o wymaganej passie
+                    const notification = document.createElement('div');
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: transparent;
+                        backdrop-filter: blur(25px);
+                        color: var(--navy);
+                        padding: 30px 40px;
+                        border-radius: 24px;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        z-index: 10000;
+                        box-shadow: 
+                            0 25px 80px rgba(6,21,52,0.08),
+                            0 12px 40px rgba(255,255,255,0.15),
+                            inset 0 1px 0 rgba(255,255,255,0.4),
+                            0 0 60px rgba(255,255,255,0.2);
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        animation: slideInFromTop 0.5s ease-out forwards;
+                        text-align: center;
+                    `;
+                    notification.innerHTML = `🔒 Potrzebujesz ${requiredDays} dni passy!<br><small>Aktualnie masz: ${currentStreak} dni</small>`;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.animation = 'slideOutToTop 0.5s ease-out forwards';
+                        setTimeout(() => notification.remove(), 500);
+                    }, 3000);
+                    
+                    return;
+                }
+            }
+            
+            // Usuń wszystkie klasy tematów z body i html
+            const bodyClasses = document.body.className.split(' ').filter(cls => !cls.startsWith('theme-'));
+            document.body.className = bodyClasses.join(' ');
+            
+            const htmlClasses = document.documentElement.className.split(' ').filter(cls => !cls.startsWith('theme-'));
+            document.documentElement.className = htmlClasses.join(' ');
+            
+            // Dodaj nową klasę tematu do body i html
+            document.body.classList.add(`theme-${theme}`);
+            document.documentElement.classList.add(`theme-${theme}`);
+            
+            // Zapisz wybór
+            localStorage.setItem('colorScheme', theme);
+            
+            // Zaktualizuj aktywny schemat w UI
+            document.querySelectorAll('.color-scheme').forEach(scheme => {
+                scheme.classList.remove('active');
+            });
+            const activeScheme = document.querySelector(`[data-theme="${theme}"]`);
+            if (activeScheme) {
+                activeScheme.classList.add('active');
+            }
+            
+            console.log(`Zmieniono schemat kolorów na: ${theme}`);
+        }
+
+        function updateSpecialColors() {
+            // Aktualizuj dostępność specjalnych kolorów
+            document.querySelectorAll('.special-color').forEach(colorScheme => {
+                const requiredDays = parseInt(colorScheme.dataset.required);
+                if (currentStreak >= requiredDays) {
+                    colorScheme.classList.add('unlocked');
+                } else {
+                    colorScheme.classList.remove('unlocked');
+                }
+            });
+        }
+
+        function loadSettings() {
+            // Załaduj schemat kolorów
+            const colorScheme = localStorage.getItem('colorScheme') || 'blue';
+            
+            // Usuń wszystkie poprzednie klasy tematów
+            const bodyClasses = document.body.className.split(' ').filter(cls => !cls.startsWith('theme-'));
+            document.body.className = bodyClasses.join(' ');
+            
+            const htmlClasses = document.documentElement.className.split(' ').filter(cls => !cls.startsWith('theme-'));
+            document.documentElement.className = htmlClasses.join(' ');
+            
+            // Dodaj nową klasę tematu
+            document.body.classList.add(`theme-${colorScheme}`);
+            document.documentElement.classList.add(`theme-${colorScheme}`);
+            
+            // Zaktualizuj aktywny schemat w UI
+            document.querySelectorAll('.color-scheme').forEach(scheme => {
+                scheme.classList.remove('active');
+            });
+            const activeScheme = document.querySelector(`[data-theme="${colorScheme}"]`);
+            if (activeScheme) {
+                activeScheme.classList.add('active');
+            }
+            
+            console.log(`Załadowano schemat kolorów: ${colorScheme}`);
+            
+            // Aktualizuj specjalne kolory
+            updateSpecialColors();
+        }
+
+        // Zamknij modals po kliknięciu w tło
         document.getElementById('titlesModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 hideTitlesModal();
@@ -1591,7 +2690,14 @@
             }
         });
 
-        // Zapisuj dane przy każdej zmianie
+        document.getElementById('settingsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSettingsModal();
+            }
+        });
+
+
+
         function saveAllData() {
             try {
                 localStorage.setItem('lastDrawDate', lastDrawDate || '');
@@ -1616,15 +2722,12 @@
             }
         }
 
-        // Zapisuj dane przed zamknięciem strony
         window.addEventListener('beforeunload', saveAllData);
         window.addEventListener('pagehide', saveAllData);
         
-        // Zapisuj dane przy każdej aktywności użytkownika
         document.addEventListener('click', saveAllData);
         document.addEventListener('keydown', saveAllData);
 
-        // Funkcja przewijania do góry
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -1632,7 +2735,6 @@
             });
         }
 
-        // Pokaż/ukryj przycisk przewijania
         window.addEventListener('scroll', function() {
             const scrollButton = document.getElementById('scrollToTop');
             if (window.pageYOffset > 300) {
@@ -1642,5 +2744,5 @@
             }
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99743f0eb212c137',t:'MTc2MTkyNTE3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997d39c55656d364',t:'MTc2MjAxOTMzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

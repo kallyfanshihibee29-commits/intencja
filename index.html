@@ -20,7 +20,41 @@
         }
 
         /* Schematy kolorów */
-        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony → Niebieski → Fioletowy → Pozostałe */
+        /* KOLORY SEZONOWE */
+        
+        .theme-christmas {
+            --bg: #1a472a;
+            --bg2: #2d5a3d;
+            --navy: #ffffff;
+            --quote-grad-start: #c41e3a;
+            --quote-grad-end: #8b0000;
+            --point-blue: #ffffff;
+        }
+
+        .theme-christmas .title,
+        .theme-christmas .subtitle,
+        .theme-christmas .color-scheme span,
+        .theme-christmas .settings-header h2,
+        .theme-christmas .settings-subtitle,
+        .theme-christmas .settings-section-title,
+        .theme-christmas .titles-header h2,
+        .theme-christmas .titles-subtitle,
+        .theme-christmas .prayer-modal-title,
+        .theme-christmas .font-name,
+        .theme-christmas .font-preview {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .theme-snow {
+            --bg: #e0f2fe;
+            --bg2: #f0f9ff;
+            --navy: #0c4a6e;
+            --quote-grad-start: #0ea5e9;
+            --quote-grad-end: #38bdf8;
+            --point-blue: #0284c7;
+        }
+
+        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → ��ółty → Zielony ��� Niebieski → Fioletowy → Pozostałe */
         
         .theme-lightrose {
             --bg: #ffe4e6;
@@ -1428,11 +1462,11 @@
    </div>
    <div class="card"><button class="titles-button" id="titlesButton" onclick="showTitlesModal()"> 🏆 Tytuły Dyskretniaka </button>
    </div>
-  </div><button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</button> <!-- Modal tytułów -->
+  </div><button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</button> <!-- Modal tytuł��w -->
   <div class="titles-modal" id="titlesModal">
    <div class="titles-content"><button class="close-modal" onclick="hideTitlesModal()">×</button>
     <div class="titles-header">
-     <h2>🏆 Tytu��y Dyskretniaka</h2>
+     <h2>�� Tytuły Dyskretniaka</h2>
      <p class="titles-subtitle">Zdobywaj tytuły poprzez codzienną passę modlitwy!</p>
     </div>
     <div id="titlesContainer"></div>
@@ -1450,7 +1484,7 @@
      <h2>⚙️ Ustawienia</h2>
      <p class="settings-subtitle">Dostosuj wygląd aplikacji</p>
     </div>
-    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Style Strony</button>
+    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Style Strony</button> <button class="settings-tab" onclick="switchTab('seasonal')">Kolory Sezonowe</button>
     </div>
     <div id="colorsTab" class="tab-content active">
      <div class="settings-section">
@@ -1513,6 +1547,19 @@
       </div>
      </div>
     </div>
+    <div id="seasonalTab" class="tab-content">
+     <div class="settings-section">
+      <h3 class="settings-section-title">Motywy Sezonowe</h3>
+      <div class="color-schemes">
+       <div class="color-scheme" data-theme="christmas" onclick="changeColorScheme('christmas')">
+        <div class="color-preview" style="background: linear-gradient(135deg, #1a472a 0%, #c41e3a 100%);"></div><span>🎄 Świąteczna Harmonia</span>
+       </div>
+       <div class="color-scheme" data-theme="snow" onclick="changeColorScheme('snow')">
+        <div class="color-preview" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #ffffff 100%);"></div><span>❄️ Śnieżna Zadyma</span>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <script>
@@ -1523,7 +1570,7 @@
             },
             {
                 title: "Zdrowaś Maryjo",
-                text: "Zdrowaś Maryjo, łaski pełna,\nPan z Tobą,\nbłogosławionaś Ty między niewiastami\ni błogosławiony owoc żywota Twojego, Jezus.\nŚwięta Maryjo, Matko Boża,\nmódl się za nami grzesznymi,\nteraz i w godzinę śmierci naszej. Amen."
+                text: "Zdrowaś Maryjo, łaski pełna,\nPan z Tobą,\nbłogosławionaś Ty między niewiastami\ni błogosławiony owoc żywota Twojego, Jezus.\nŚwięta Maryjo, Matko Boża,\nm��dl się za nami grzesznymi,\nteraz i w godzinę śmierci naszej. Amen."
             },
             {
                 title: "Chwała Ojcu",
@@ -1531,7 +1578,7 @@
             },
             {
                 title: "Wierzę w Boga (Skład Apostolski)",
-                text: "Wierzę w Boga, Ojca Wszechmogącego,\nStworzyciela nieba i ziemi,\ni w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego,\nktóry się począł z Ducha Świętego,\nnarodził się z Maryi Panny,\numęczon pod Ponckim Piłatem,\nukrzyżowan, umarł i pogrzebion;\nzstąpił do piekieł, trzeciego dnia zmartwychwstał;\nwstąpił na niebiosa, siedzi po prawicy Boga Ojca Wszechmogącego,\nstamtąd przyjdzie sądzić żywych i umarłych.\nWierzę w Ducha Świętego,\nświęty Kościół powszechny,\nświętych obcowanie, grzechów odpuszczenie,\nciała zmartwychwstanie, ����ywot wieczny. Amen."
+                text: "Wierzę w Boga, Ojca Wszechmogącego,\nStworzyciela nieba i ziemi,\ni w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego,\nktóry się począł z Ducha Świętego,\nnarodził się z Maryi Panny,\numęczon pod Ponckim Piłatem,\nukrzyżowan, umarł i pogrzebion;\nzstąpił do piekieł, trzeciego dnia zmartwychwstał;\nwstąpił na niebiosa, siedzi po prawicy Boga Ojca Wszechmogącego,\nstamtąd przyjdzie sądzić żywych i umarłych.\nWierzę w Ducha Świętego,\nświęty Kościół powszechny,\nświętych obcowanie, grzechów odpuszczenie,\nciała zmartwychwstanie, żywot wieczny. Amen."
             },
             {
                 title: "Pod Twoją obronę",
@@ -1539,7 +1586,7 @@
             },
             {
                 title: "Aniele Boży, Stróżu mój",
-                text: "Aniele Boży, Stróżu mój,\nTy zawsze przy mnie stój,\nrano, wieczór, we dnie, w nocy,\nbąd���� mi zawsze ku pomocy.\nStrzeż duszy, ciała mego,\nzaprowadź mnie do żywota wiecznego. Amen."
+                text: "Aniele Boży, Stróżu mój,\nTy zawsze przy mnie stój,\nrano, wieczór, we dnie, w nocy,\nbądź mi zawsze ku pomocy.\nStrzeż duszy, ciała mego,\nzaprowadź mnie do żywota wiecznego. Amen."
             },
             {
                 title: "Modlitwa do Ducha Świętego",
@@ -1563,7 +1610,7 @@
             },
             {
                 title: "O Krwi i Wodo",
-                text: "O Krwi i Wodo, któraś wypłynęła\nz Najświętszego Serca Jezusowego\njako zdr��j miłosierdzia dla nas,\nufam Tobie."
+                text: "O Krwi i Wodo, któraś wypłynęła\nz Najświętszego Serca Jezusowego\njako zdrój miłosierdzia dla nas,\nufam Tobie."
             },
             {
                 title: "Boże, bądź miłościw mnie grzesznemu",
@@ -1589,7 +1636,7 @@
             "Za dusze cierpiące w Czyśćcu",
             "Za pokój na świecie i w naszych sercach",
             "Za chorych i cierpiących w naszej wspólnocie",
-            "Za jedność rodzin i małżeństw",
+            "Za jedność rodzin i ma��żeństw",
             "Za młodzież i ich przyszłość",
             "Za osoby samotne i opuszczone",
             "Za nawrócenie grzeszników",
@@ -1796,8 +1843,8 @@
         function getStreakMessage() {
             if (currentStreak === 0) return '';
             if (currentStreak === 1) return '🔥 Pierwszy dzień modlitwy!';
-            if (currentStreak < 7) return `������ Passa: ${currentStreak} dni z rzędu!`;
-            if (currentStreak < 30) return `🔥�� Świetna passa: ${currentStreak} dni!`;
+            if (currentStreak < 7) return `🔥 Passa: ${currentStreak} dni z rzędu!`;
+            if (currentStreak < 30) return `🔥🔥 Świetna passa: ${currentStreak} dni!`;
             if (currentStreak < 100) return `🔥🔥🔥 Niesamowita passa: ${currentStreak} dni!`;
             return `🔥🔥🔥🔥 Legendarna passa: ${currentStreak} dni!`;
         }
@@ -1915,7 +1962,7 @@
                     </div>
                     <div class="result-card show">
                         <div class="result-title">
-                            <div class="icon">🙏</div>
+                            <div class="icon">��</div>
                             Dzisiejsza modlitwa
                         </div>
                         <div class="result-content">
@@ -2158,7 +2205,7 @@
                 localStorage.setItem('lastStreakDate', lastStreakDate || '');
                 localStorage.setItem('unlockedTitles', JSON.stringify(unlockedTitles || []));
             } catch (e) {
-                console.log('Błąd zapisywania danych:', e);
+                console.log('Bł��d zapisywania danych:', e);
             }
         }
 
@@ -2356,5 +2403,5 @@
         `;
         document.head.appendChild(style);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a73088be4b7c3c1',t:'MTc2NDU5NjgxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a7442ab148c1e5a',t:'MTc2NDYwOTY4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -151,7 +151,7 @@
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
-        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony ���� Niebieski → Fioletowy → Pozostałe */
+        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony → Niebieski → Fioletowy → Pozostałe */
         
         .theme-lightrose {
             --bg: #ffe4e6;
@@ -1588,6 +1588,132 @@
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
+        /* Własne intencje */
+        .custom-intentions-list {
+            margin-top: 20px;
+        }
+
+        .custom-intention-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-intention-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .custom-intention-text {
+            flex: 1;
+            color: var(--navy);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .custom-intention-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .edit-intention-btn, .delete-intention-btn {
+            background: rgba(59, 89, 152, 0.1);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .edit-intention-btn:hover {
+            background: rgba(59, 89, 152, 0.2);
+            transform: scale(1.1);
+        }
+
+        .delete-intention-btn {
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        .delete-intention-btn:hover {
+            background: rgba(220, 38, 38, 0.2);
+            transform: scale(1.1);
+        }
+
+        .add-intention-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .intention-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(59, 89, 152, 0.2);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            color: var(--navy);
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .intention-input:focus {
+            outline: none;
+            border-color: var(--point-blue);
+            box-shadow: 0 0 0 3px rgba(43, 123, 214, 0.1);
+        }
+
+        .add-intention-btn, .save-intention-btn, .cancel-edit-btn {
+            background: linear-gradient(135deg, var(--quote-grad-start) 0%, var(--quote-grad-end) 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59,89,152,0.25);
+            width: 100%;
+        }
+
+        .add-intention-btn:hover, .save-intention-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59,89,152,0.35);
+        }
+
+        .cancel-edit-btn {
+            background: rgba(107, 114, 128, 0.8);
+            margin-top: 8px;
+        }
+
+        .cancel-edit-btn:hover {
+            background: rgba(107, 114, 128, 1);
+            transform: translateY(-2px);
+        }
+
+        .no-intentions-message {
+            text-align: center;
+            color: var(--navy);
+            opacity: 0.6;
+            font-size: 0.95rem;
+            padding: 30px 20px;
+            font-style: italic;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 20px 10px 15px 10px;
@@ -1679,11 +1805,12 @@
 
             .settings-tabs {
                 margin-bottom: 20px;
+                flex-wrap: wrap;
             }
 
             .settings-tab {
                 padding: 10px 15px;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             .font-option {
@@ -1696,6 +1823,16 @@
 
             .font-name {
                 font-size: 0.9rem;
+            }
+
+            .custom-intention-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .custom-intention-actions {
+                width: 100%;
+                justify-content: flex-end;
             }
         }
 
@@ -1733,7 +1870,7 @@
       <div class="countdown" id="countdown">
        Ładowanie...
       </div>
-     </div><button class="draw-button" id="drawButton" onclick="startDrawing()"> Losuj intencję i modlitw�� </button>
+     </div><button class="draw-button" id="drawButton" onclick="startDrawing()"> Losuj intencję i modlitwę </button>
     </div>
     <div id="drawingArea"></div>
     <div id="resultsArea"></div>
@@ -1751,7 +1888,7 @@
    </div>
   </div><!-- Modal modlitwy -->
   <div class="prayer-modal" id="prayerModal">
-   <div class="prayer-modal-content"><button class="close-prayer-modal" onclick="hidePrayerModal()">���</button>
+   <div class="prayer-modal-content"><button class="close-prayer-modal" onclick="hidePrayerModal()">×</button>
     <div class="prayer-modal-title" id="prayerModalTitle"></div>
     <div class="prayer-modal-text" id="prayerModalText"></div>
    </div>
@@ -1761,7 +1898,7 @@
     <div class="settings-header">
      <h2>Dostosuj wygląd aplikacji</h2>
     </div>
-    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Schemat kolorów</button> <button class="settings-tab" onclick="switchTab('seasonal')">Motywy Sezonowe</button>
+    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Kolory</button> <button class="settings-tab" onclick="switchTab('seasonal')">Sezonowe</button> <button class="settings-tab" onclick="switchTab('intentions')">Intencje</button>
     </div>
     <div id="colorsTab" class="tab-content active">
      <div class="settings-section">
@@ -1837,6 +1974,18 @@
       </div>
      </div>
     </div>
+    <div id="intentionsTab" class="tab-content">
+     <div class="settings-section">
+      <h3 class="settings-section-title">Własne intencje</h3>
+      <div class="add-intention-form"><input type="text" id="intentionInput" class="intention-input" placeholder="Wpisz swoją intencję..." maxlength="200"> <button class="add-intention-btn" onclick="addCustomIntention()">✚ Dodaj intencję</button>
+      </div>
+      <div class="custom-intentions-list" id="customIntentionsList">
+       <div class="no-intentions-message">
+        Nie masz jeszcze własnych intencji. Dodaj pierwszą powyżej! 🙏
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <script>
@@ -1902,12 +2051,12 @@
                 text: "Serce Jezusa, ufam Tobie!"
             },
             {
-                title: "Apel Jasnog��rski",
+                title: "Apel Jasnogórski",
                 text: "Maryjo, Królowo Polski,\njestem przy Tobie, pamiętam, czuwam."
             }
         ];
 
-        const intentions = [
+        const defaultIntentions = [
             "Za księdza proboszcza i wszystkich księży z naszej parafii",
             "Za losową osobę korzystającą z aplikacji Dyskretna Intencja",
             "Za dusze cierpiące w Czyśćcu",
@@ -1940,9 +2089,12 @@
             "Za wszystkich wiernych zmarłych"
         ];
 
+        let customIntentions = [];
+
         // Globalne zmienne
         let lastDrawDate, todaysPrayer, todaysIntention, drawHistory, currentStreak, lastStreakDate, unlockedTitles;
         let currentPrayerData = null;
+        let editingIntentionIndex = null;
 
         // Funkcja bezpiecznego ładowania danych z localStorage
         function loadData() {
@@ -1959,6 +2111,9 @@
                 const unlockedTitlesData = localStorage.getItem('unlockedTitles');
                 unlockedTitles = unlockedTitlesData ? JSON.parse(unlockedTitlesData) : [];
                 
+                const customIntentionsData = localStorage.getItem('customIntentions');
+                customIntentions = customIntentionsData ? JSON.parse(customIntentionsData) : [];
+                
                 checkStreakContinuity();
                 
                 console.log('Załadowane dane:', {
@@ -1968,14 +2123,14 @@
                     historyLength: drawHistory.length,
                     currentStreak,
                     unlockedTitles: unlockedTitles.length,
-                    secretUnlocked
+                    customIntentions: customIntentions.length
                 });
             } catch (e) {
                 console.log('Błąd ładowania danych:', e);
                 drawHistory = [];
                 currentStreak = 0;
                 unlockedTitles = [];
-                secretUnlocked = false;
+                customIntentions = [];
             }
         }
 
@@ -2010,7 +2165,7 @@
                 days: 2, 
                 name: "Nowicjusz", 
                 christmasName: "Mały Pomocnik Świętego Mikołaja",
-                snowName: "Pierwszy Płatek ��niegu",
+                snowName: "Pierwszy Płatek Śniegu",
                 gradient: "linear-gradient(135deg, #fbbf24, #f59e0b)", 
                 christmasGradient: "linear-gradient(135deg, #c41e3a, #dc2626)",
                 snowGradient: "linear-gradient(135deg, #e0f2fe, #bae6fd)",
@@ -2077,7 +2232,7 @@
                 glowColor: "rgba(249, 115, 22, 0.3)", 
                 christmasGlowColor: "rgba(255, 255, 255, 0.5)",
                 snowGlowColor: "rgba(224, 242, 254, 0.6)",
-                icon: "��", 
+                icon: "🏆", 
                 christmasIcon: "👼",
                 snowIcon: "👼",
                 unlocked: false 
@@ -2191,7 +2346,7 @@
                 glowColor: "rgba(239, 68, 68, 0.3)", 
                 christmasGlowColor: "rgba(30, 58, 138, 0.3)",
                 snowGlowColor: "rgba(14, 165, 233, 0.4)",
-                icon: "����", 
+                icon: "🏆", 
                 christmasIcon: "🎵",
                 snowIcon: "🎵",
                 unlocked: false 
@@ -2346,7 +2501,7 @@
                 snowGlowColor: "rgba(56, 189, 248, 0.4)",
                 icon: "🏆", 
                 christmasIcon: "📿",
-                snowIcon: "���",
+                snowIcon: "📿",
                 unlocked: false 
             },
             { 
@@ -2403,11 +2558,169 @@
                 snowGlowColor: "rgba(224, 242, 254, 0.6)",
                 icon: "⚡", 
                 christmasIcon: "👼",
-                snowIcon: "❄️",
+                snowIcon: "❄��",
                 unlocked: false, 
                 animated: true 
             }
         ];
+
+        function getAllIntentions() {
+            return [...defaultIntentions, ...customIntentions];
+        }
+
+        function addCustomIntention() {
+            const input = document.getElementById('intentionInput');
+            const text = input.value.trim();
+            
+            if (!text) {
+                showNotification('Wpisz najpierw swoją intencję! 📝', 'warning');
+                return;
+            }
+            
+            if (text.length < 10) {
+                showNotification('Intencja powinna mieć przynajmniej 10 znaków! 📝', 'warning');
+                return;
+            }
+            
+            customIntentions.push(text);
+            saveAllData();
+            input.value = '';
+            renderCustomIntentions();
+            showNotification('✅ Intencja została dodana!', 'success');
+        }
+
+        function editCustomIntention(index) {
+            const intention = customIntentions[index];
+            const input = document.getElementById('intentionInput');
+            input.value = intention;
+            editingIntentionIndex = index;
+            
+            // Zmień przycisk na "Zapisz zmiany"
+            const addBtn = document.querySelector('.add-intention-btn');
+            addBtn.textContent = '💾 Zapisz zmiany';
+            addBtn.onclick = saveEditedIntention;
+            
+            // Dodaj przycisk anuluj
+            if (!document.querySelector('.cancel-edit-btn')) {
+                const cancelBtn = document.createElement('button');
+                cancelBtn.className = 'cancel-edit-btn';
+                cancelBtn.textContent = '✖️ Anuluj';
+                cancelBtn.onclick = cancelEdit;
+                addBtn.parentElement.appendChild(cancelBtn);
+            }
+            
+            input.focus();
+        }
+
+        function saveEditedIntention() {
+            const input = document.getElementById('intentionInput');
+            const text = input.value.trim();
+            
+            if (!text) {
+                showNotification('Wpisz tekst intencji! 📝', 'warning');
+                return;
+            }
+            
+            if (text.length < 10) {
+                showNotification('Intencja powinna mieć przynajmniej 10 znaków! 📝', 'warning');
+                return;
+            }
+            
+            customIntentions[editingIntentionIndex] = text;
+            saveAllData();
+            cancelEdit();
+            renderCustomIntentions();
+            showNotification('✅ Intencja została zaktualizowana!', 'success');
+        }
+
+        function cancelEdit() {
+            const input = document.getElementById('intentionInput');
+            input.value = '';
+            editingIntentionIndex = null;
+            
+            const addBtn = document.querySelector('.add-intention-btn');
+            addBtn.textContent = '✚ Dodaj intencję';
+            addBtn.onclick = addCustomIntention;
+            
+            const cancelBtn = document.querySelector('.cancel-edit-btn');
+            if (cancelBtn) {
+                cancelBtn.remove();
+            }
+        }
+
+        function deleteCustomIntention(index) {
+            const intention = customIntentions[index];
+            const card = document.querySelector(`[data-intention-index="${index}"]`);
+            
+            // Zmień przycisk usuń na przycisk potwierdzenia
+            const actionsDiv = card.querySelector('.custom-intention-actions');
+            actionsDiv.innerHTML = `
+                <button class="delete-intention-btn" onclick="confirmDeleteIntention(${index})" style="background: rgba(220, 38, 38, 0.8); color: white; padding: 8px 15px; font-weight: 700;">
+                    ✓ Usuń
+                </button>
+                <button class="edit-intention-btn" onclick="renderCustomIntentions()" style="padding: 8px 15px;">
+                    ✖️ Anuluj
+                </button>
+            `;
+        }
+
+        function confirmDeleteIntention(index) {
+            customIntentions.splice(index, 1);
+            saveAllData();
+            renderCustomIntentions();
+            showNotification('🗑️ Intencja została usunięta', 'info');
+        }
+
+        function renderCustomIntentions() {
+            const container = document.getElementById('customIntentionsList');
+            
+            if (customIntentions.length === 0) {
+                container.innerHTML = '<div class="no-intentions-message">Nie masz jeszcze własnych intencji. Dodaj pierwsz�� powyżej! 🙏</div>';
+                return;
+            }
+            
+            container.innerHTML = customIntentions.map((intention, index) => `
+                <div class="custom-intention-card" data-intention-index="${index}">
+                    <div class="custom-intention-text">${intention}</div>
+                    <div class="custom-intention-actions">
+                        <button class="edit-intention-btn" onclick="editCustomIntention(${index})" title="Edytuj intencję">
+                            ✏️
+                        </button>
+                        <button class="delete-intention-btn" onclick="deleteCustomIntention(${index})" title="Usuń intencję">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'success' ? 'linear-gradient(135deg, #22c55e, #16a34a)' : 
+                             type === 'warning' ? 'linear-gradient(135deg, #f59e0b, #d97706)' : 
+                             'linear-gradient(135deg, #3b82f6, #1d4ed8)'};
+                color: white;
+                padding: 15px 25px;
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 1rem;
+                z-index: 10001;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                animation: slideDown 0.3s ease-out;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideUp 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 2500);
+        }
 
         function updateStreak() {
             const now = new Date();
@@ -2802,16 +3115,16 @@
                 </div>
             `;
 
-            const intentionOptions = [...intentions];
+            const allIntentions = getAllIntentions();
             let intentionIndex = 0;
             const intentionInterval = setInterval(() => {
-                document.getElementById('drawingText').textContent = intentionOptions[intentionIndex % intentionOptions.length];
+                document.getElementById('drawingText').textContent = allIntentions[intentionIndex % allIntentions.length];
                 intentionIndex++;
             }, 100);
 
             setTimeout(() => {
                 clearInterval(intentionInterval);
-                const selectedIntention = intentions[Math.floor(Math.random() * intentions.length)];
+                const selectedIntention = allIntentions[Math.floor(Math.random() * allIntentions.length)];
                 
                 drawingArea.innerHTML = `
                     <div class="drawing-animation">
@@ -2977,6 +3290,7 @@
                 localStorage.setItem('currentStreak', currentStreak.toString());
                 localStorage.setItem('lastStreakDate', lastStreakDate || '');
                 localStorage.setItem('unlockedTitles', JSON.stringify(unlockedTitles || []));
+                localStorage.setItem('customIntentions', JSON.stringify(customIntentions || []));
             } catch (e) {
                 console.log('Błąd zapisywania danych:', e);
             }
@@ -2986,11 +3300,17 @@
         function showSettingsModal() {
             document.getElementById('settingsModal').classList.add('show');
             document.getElementById('settingsButton').classList.add('hidden');
+            
+            // Załaduj własne intencje jeśli w zakładce
+            if (document.getElementById('intentionsTab').classList.contains('active')) {
+                renderCustomIntentions();
+            }
         }
 
         function hideSettingsModal() {
             document.getElementById('settingsModal').classList.remove('show');
             document.getElementById('settingsButton').classList.remove('hidden');
+            cancelEdit();
         }
 
         function switchTab(tabName) {
@@ -3003,6 +3323,11 @@
             
             document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
             document.getElementById(tabName + 'Tab').classList.add('active');
+            
+            // Załaduj intencje gdy otwarta zakładka
+            if (tabName === 'intentions') {
+                renderCustomIntentions();
+            }
         }
 
         function changeColorScheme(theme) {
@@ -3128,6 +3453,23 @@
             }
         });
 
+        // Enter w polu intencji = dodaj
+        document.addEventListener('DOMContentLoaded', function() {
+            const intentionInput = document.getElementById('intentionInput');
+            if (intentionInput) {
+                intentionInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (editingIntentionIndex !== null) {
+                            saveEditedIntention();
+                        } else {
+                            addCustomIntention();
+                        }
+                    }
+                });
+            }
+        });
+
         // Ustaw domyślny schemat kolorów przy starcie
         document.documentElement.classList.add('theme-blue');
         document.body.classList.add('theme-blue');
@@ -3200,8 +3542,30 @@
                 0%, 100% { background-position: 0% 50%; }
                 50% { background-position: 100% 50%; }
             }
+
+            @keyframes slideDown {
+                from {
+                    transform: translate(-50%, -100px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translate(-50%, -100px);
+                    opacity: 0;
+                }
+            }
         `;
         document.head.appendChild(style);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a8442cba102c051',t:'MTc2NDc3NzQ1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a845a9c91b7f58e',t:'MTc2NDc3ODQzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dyskretna Intencja</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet">
   <style>
         body {
             box-sizing: border-box;
@@ -25,23 +25,32 @@
         .theme-christmas {
             --bg: #1a472a;
             --bg2: #2d5a3d;
-            --navy: #ffffff;
+            --navy: #c41e3a;
             --quote-grad-start: #c41e3a;
             --quote-grad-end: #8b0000;
             --point-blue: #ffffff;
         }
 
-        .theme-christmas .title,
-        .theme-christmas .subtitle,
+        .theme-christmas .title {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-christmas .subtitle {
+            color: #ffffff;
+            opacity: 1;
+        }
+
         .theme-christmas .color-scheme span,
         .theme-christmas .settings-header h2,
-        .theme-christmas .settings-subtitle,
-        .theme-christmas .settings-section-title,
         .theme-christmas .titles-header h2,
-        .theme-christmas .titles-subtitle,
         .theme-christmas .prayer-modal-title,
-        .theme-christmas .font-name,
-        .theme-christmas .font-preview {
+        .theme-christmas .font-preview,
+        .theme-christmas .settings-tabs .settings-tab,
+        .theme-christmas .title-name,
+        .theme-christmas .close-modal,
+        .theme-christmas .close-prayer-modal {
+            color: #ffffff;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
         }
 
@@ -54,7 +63,95 @@
             --point-blue: #0284c7;
         }
 
-        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony → Niebieski → Fioletowy → Pozostałe */
+        .theme-snow .title {
+            color: #0284c7;
+            text-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+        }
+
+        .theme-snow .subtitle {
+            color: #0c4a6e;
+            opacity: 0.9;
+        }
+
+        .theme-snow .color-scheme span,
+        .theme-snow .settings-header h2,
+        .theme-snow .titles-header h2,
+        .theme-snow .prayer-modal-title,
+        .theme-snow .font-preview,
+        .theme-snow .settings-tabs .settings-tab,
+        .theme-snow .title-name,
+        .theme-snow .close-modal,
+        .theme-snow .close-prayer-modal {
+            color: #0c4a6e;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .theme-santa {
+            --bg: #dc2626;
+            --bg2: #fee2e2;
+            --navy: #7f1d1d;
+            --quote-grad-start: #dc2626;
+            --quote-grad-end: #991b1b;
+            --point-blue: #ffffff;
+        }
+
+        .theme-santa .title {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-santa .subtitle {
+            color: #ffffff;
+            opacity: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-santa .color-scheme span,
+        .theme-santa .settings-header h2,
+        .theme-santa .titles-header h2,
+        .theme-santa .prayer-modal-title,
+        .theme-santa .font-preview,
+        .theme-santa .settings-tabs .settings-tab,
+        .theme-santa .title-name,
+        .theme-santa .close-modal,
+        .theme-santa .close-prayer-modal {
+            color: #7f1d1d;
+            text-shadow: none;
+        }
+
+        .theme-icecrystal {
+            --bg: #e0f2fe;
+            --bg2: #f0f9ff;
+            --navy: #0c4a6e;
+            --quote-grad-start: #38bdf8;
+            --quote-grad-end: #cbd5e1;
+            --point-blue: #0284c7;
+        }
+
+        .theme-icecrystal .title {
+            color: #0284c7;
+            text-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+        }
+
+        .theme-icecrystal .subtitle {
+            color: #0c4a6e;
+            opacity: 0.9;
+        }
+
+        .theme-icecrystal .color-scheme span,
+        .theme-icecrystal .settings-header h2,
+        .theme-icecrystal .titles-header h2,
+        .theme-icecrystal .prayer-modal-title,
+        .theme-icecrystal .font-preview,
+        .theme-icecrystal .settings-tabs .settings-tab,
+        .theme-icecrystal .title-name,
+        .theme-icecrystal .close-modal,
+        .theme-icecrystal .close-prayer-modal {
+            color: #0c4a6e;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony ���� Niebieski → Fioletowy → Pozostałe */
         
         .theme-lightrose {
             --bg: #ffe4e6;
@@ -126,6 +223,65 @@
             --quote-grad-start: #6b7c4f;
             --quote-grad-end: #5a6b42;
             --point-blue: #4a5635;
+        }
+
+        .theme-saturatedgreen {
+            --bg: #E4EB9C;
+            --bg2: #f0f4d0;
+            --navy: #3d4a2b;
+            --quote-grad-start: #8DA750;
+            --quote-grad-end: #6b8e3d;
+            --point-blue: #5a7a35;
+        }
+
+        .theme-grayblue {
+            --bg: #cbd5e1;
+            --bg2: #e2e8f0;
+            --navy: #475569;
+            --quote-grad-start: #94a3b8;
+            --quote-grad-end: #cbd5e1;
+            --point-blue: #64748b;
+        }
+
+        .theme-darknavy {
+            --bg: #0f172a;
+            --bg2: #1e293b;
+            --navy: #e0f2fe;
+            --quote-grad-start: #1e3a8a;
+            --quote-grad-end: #1e40af;
+            --point-blue: #3b82f6;
+        }
+
+        .theme-darknavy .title {
+            color: #bae6fd;
+            text-shadow: 0 2px 8px rgba(186, 230, 253, 0.4);
+        }
+
+        .theme-darknavy .subtitle {
+            color: #bae6fd;
+            opacity: 0.8;
+        }
+
+        .theme-darknavy .color-scheme span,
+        .theme-darknavy .settings-header h2,
+        .theme-darknavy .titles-header h2,
+        .theme-darknavy .prayer-modal-title,
+        .theme-darknavy .font-preview,
+        .theme-darknavy .settings-tabs .settings-tab,
+        .theme-darknavy .title-name,
+        .theme-darknavy .close-modal,
+        .theme-darknavy .close-prayer-modal {
+            color: #bae6fd;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-holopink {
+            --bg: #f5d0fe;
+            --bg2: #fae8ff;
+            --navy: #701a75;
+            --quote-grad-start: #d946ef;
+            --quote-grad-end: #f0abfc;
+            --point-blue: #c026d3;
         }
 
         .theme-lightblueturquoise {
@@ -217,6 +373,59 @@
             --quote-grad-end: #333333;
             --point-blue: #666666;
         }
+
+        .theme-darkbordeaux {
+            --bg: #450a0a;
+            --bg2: #7f1d1d;
+            --navy: #fecaca;
+            --quote-grad-start: #7f1d1d;
+            --quote-grad-end: #991b1b;
+            --point-blue: #dc2626;
+        }
+
+        .theme-darkbordeaux .title {
+            color: #fecaca;
+            text-shadow: 0 2px 8px rgba(254, 202, 202, 0.4);
+        }
+
+        .theme-darkbordeaux .subtitle {
+            color: #fecaca;
+            opacity: 0.8;
+        }
+
+        .theme-darkbordeaux .color-scheme span,
+        .theme-darkbordeaux .settings-header h2,
+        .theme-darkbordeaux .titles-header h2,
+        .theme-darkbordeaux .prayer-modal-title,
+        .theme-darkbordeaux .font-preview,
+        .theme-darkbordeaux .settings-tabs .settings-tab,
+        .theme-darkbordeaux .title-name,
+        .theme-darkbordeaux .close-modal,
+        .theme-darkbordeaux .close-prayer-modal {
+            color: #fecaca;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-rednavycheck {
+            --bg: #dbeafe;
+            --bg2: #fecaca;
+            --navy: #1e3a8a;
+            --quote-grad-start: #dc2626;
+            --quote-grad-end: #1e40af;
+            --point-blue: #991b1c;
+        }
+
+        .theme-rednavycheck .title {
+            color: #1e3a8a;
+            text-shadow: 0 2px 8px rgba(30, 58, 138, 0.4);
+        }
+
+        .theme-rednavycheck .subtitle {
+            color: #7f1d1d;
+            opacity: 0.9;
+        }
+
+
 
         * {
             margin: 0;
@@ -403,8 +612,12 @@
         .countdown {
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--point-blue);
+            color: var(--navy);
             margin-bottom: 15px;
+        }
+
+        .theme-christmas .countdown {
+            color: #22c55e;
         }
 
         .streak-section {
@@ -414,13 +627,18 @@
         .streak-message {
             font-size: 0.95rem;
             font-weight: 700;
-            color: var(--point-blue);
-            background: rgba(43, 123, 214, 0.08);
+            color: var(--navy);
+            background: rgba(59, 89, 152, 0.08);
             padding: 12px 16px;
             border-radius: 12px;
             border: none;
             text-align: center;
             transition: all 0.3s ease;
+        }
+
+        .theme-christmas .streak-message {
+            color: #22c55e;
+            background: rgba(34, 197, 94, 0.08);
         }
 
         .lost-streak-message {
@@ -929,15 +1147,17 @@
             font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 8px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--navy);
             display: flex;
             align-items: center;
             gap: 10px;
             position: relative;
             z-index: 2;
+        }
+
+        .theme-christmas .title-name {
+            color: #dc2626 !important;
+            text-shadow: none !important;
         }
 
         .title-name.animated {
@@ -947,6 +1167,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .theme-christmas .title-name.animated {
+            color: #dc2626 !important;
+            text-shadow: none !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #dc2626 !important;
+            background-clip: unset !important;
         }
 
         .title-icon {
@@ -1119,6 +1348,32 @@
         }
 
         .color-scheme {
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            animation: colorSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes colorSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8) rotateY(-10deg);
+                filter: blur(4px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(-5px) scale(1.05) rotateY(5deg);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateY(0deg);
+                filter: blur(0px);
+            }
+        }
+
+
+
+        .color-scheme {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1160,36 +1415,41 @@
 
         .settings-tabs {
             display: flex;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.95);
+            gap: 8px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            padding: 4px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .settings-tab {
             flex: 1;
-            padding: 12px 20px;
-            background: transparent;
-            border: 2px solid transparent;
-            border-radius: 8px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
             font-weight: 700;
             color: var(--navy);
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         .settings-tab.active {
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            color: var(--point-blue);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: var(--navy);
             border-color: var(--point-blue);
+            border-width: 2px;
+            transform: translateY(-2px);
         }
 
         .settings-tab:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.7);
-            border-color: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-1px);
         }
 
         .tab-content {
@@ -1210,6 +1470,21 @@
             color: var(--navy);
             margin-bottom: 15px;
             text-align: center;
+        }
+
+        .color-scheme {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .font-options {
@@ -1458,7 +1733,7 @@
       <div class="countdown" id="countdown">
        Ładowanie...
       </div>
-     </div><button class="draw-button" id="drawButton" onclick="startDrawing()"> Losuj intencję i modlitwę </button>
+     </div><button class="draw-button" id="drawButton" onclick="startDrawing()"> Losuj intencję i modlitw�� </button>
     </div>
     <div id="drawingArea"></div>
     <div id="resultsArea"></div>
@@ -1476,7 +1751,7 @@
    </div>
   </div><!-- Modal modlitwy -->
   <div class="prayer-modal" id="prayerModal">
-   <div class="prayer-modal-content"><button class="close-prayer-modal" onclick="hidePrayerModal()">×</button>
+   <div class="prayer-modal-content"><button class="close-prayer-modal" onclick="hidePrayerModal()">���</button>
     <div class="prayer-modal-title" id="prayerModalTitle"></div>
     <div class="prayer-modal-text" id="prayerModalText"></div>
    </div>
@@ -1486,64 +1761,64 @@
     <div class="settings-header">
      <h2>Dostosuj wygląd aplikacji</h2>
     </div>
-    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Style Strony</button> <button class="settings-tab" onclick="switchTab('seasonal')">Kolory Sezonowe</button>
+    <div class="settings-tabs"><button class="settings-tab active" onclick="switchTab('colors')">Schemat kolorów</button> <button class="settings-tab" onclick="switchTab('seasonal')">Motywy Sezonowe</button>
     </div>
     <div id="colorsTab" class="tab-content active">
      <div class="settings-section">
       <h3 class="settings-section-title">Schemat kolorów</h3>
-      <div class="color-schemes">
-       <div class="color-scheme" data-theme="lightrose" onclick="changeColorScheme('lightrose')">
+      <div class="color-schemes" id="colorSchemesContainer">
+       <div class="color-scheme" data-theme="lightrose" onclick="changeColorScheme('lightrose')" style="animation-delay: 0s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #ffe4e6, #f43f5e);"></div><span>Jasny Różany</span>
        </div>
-       <div class="color-scheme" data-theme="pink" onclick="changeColorScheme('pink')">
+       <div class="color-scheme" data-theme="pink" onclick="changeColorScheme('pink')" style="animation-delay: 0.05s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #fce7f3, #db2777);"></div><span>Różowy</span>
        </div>
-       <div class="color-scheme" data-theme="ripepumpkin" onclick="changeColorScheme('ripepumpkin')">
+       <div class="color-scheme" data-theme="ripepumpkin" onclick="changeColorScheme('ripepumpkin')" style="animation-delay: 0.15s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #ff6b35, #dc2626);"></div><span>Dojrzała Dynia</span>
        </div>
-       <div class="color-scheme" data-theme="orange" onclick="changeColorScheme('orange')">
+       <div class="color-scheme" data-theme="orange" onclick="changeColorScheme('orange')" style="animation-delay: 0.2s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #fed7aa, #f59e0b);"></div><span>Pomarańczowy</span>
        </div>
-       <div class="color-scheme" data-theme="yellow" onclick="changeColorScheme('yellow')">
+       <div class="color-scheme" data-theme="yellow" onclick="changeColorScheme('yellow')" style="animation-delay: 0.25s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #fef08a, #eab308);"></div><span>Żółty</span>
        </div>
-       <div class="color-scheme" data-theme="mustard" onclick="changeColorScheme('mustard')">
+       <div class="color-scheme" data-theme="mustard" onclick="changeColorScheme('mustard')" style="animation-delay: 0.3s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #d4a574, #b8860b);"></div><span>Musztardziany</span>
        </div>
-       <div class="color-scheme" data-theme="green" onclick="changeColorScheme('green')">
+       <div class="color-scheme" data-theme="green" onclick="changeColorScheme('green')" style="animation-delay: 0.35s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #a7f3d0, #059669);"></div><span>Zielony</span>
        </div>
-       <div class="color-scheme" data-theme="moldygreen" onclick="changeColorScheme('moldygreen')">
+       <div class="color-scheme" data-theme="moldygreen" onclick="changeColorScheme('moldygreen')" style="animation-delay: 0.4s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #8b9467, #6b7c4f);"></div><span>Spleśniała zieleń</span>
        </div>
-       <div class="color-scheme" data-theme="lightblueturquoise" onclick="changeColorScheme('lightblueturquoise')">
+       <div class="color-scheme" data-theme="lightblueturquoise" onclick="changeColorScheme('lightblueturquoise')" style="animation-delay: 0.5s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #a5f3fc, #06b6d4);"></div><span>Jasny Niebieski Turkusowy</span>
        </div>
-       <div class="color-scheme" data-theme="lightblue" onclick="changeColorScheme('lightblue')">
+       <div class="color-scheme" data-theme="lightblue" onclick="changeColorScheme('lightblue')" style="animation-delay: 0.6s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #bfdbfe, #60a5fa);"></div><span>Jasny błękit</span>
        </div>
-       <div class="color-scheme" data-theme="blue" onclick="changeColorScheme('blue')">
+       <div class="color-scheme" data-theme="blue" onclick="changeColorScheme('blue')" style="animation-delay: 0.65s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #9fc6e2, #3b5998);"></div><span>Niebieski</span>
        </div>
-       <div class="color-scheme" data-theme="navy" onclick="changeColorScheme('navy')">
+       <div class="color-scheme" data-theme="navy" onclick="changeColorScheme('navy')" style="animation-delay: 0.7s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #93c5fd, #1e3a8a);"></div><span>Granatowy</span>
        </div>
-       <div class="color-scheme" data-theme="purple" onclick="changeColorScheme('purple')">
+       <div class="color-scheme" data-theme="purple" onclick="changeColorScheme('purple')" style="animation-delay: 0.8s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #e9d5ff, #8b5cf6);"></div><span>Fioletowy</span>
        </div>
-       <div class="color-scheme" data-theme="plum" onclick="changeColorScheme('plum')">
+       <div class="color-scheme" data-theme="plum" onclick="changeColorScheme('plum')" style="animation-delay: 0.85s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #c8b5d1, #4a2c5a);"></div><span>Śliwkowy</span>
        </div>
-       <div class="color-scheme" data-theme="beige" onclick="changeColorScheme('beige')">
+       <div class="color-scheme" data-theme="beige" onclick="changeColorScheme('beige')" style="animation-delay: 0.9s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #f7f3e9, #e6d7c3);"></div><span>Beżowy</span>
        </div>
-       <div class="color-scheme" data-theme="tea" onclick="changeColorScheme('tea')">
+       <div class="color-scheme" data-theme="tea" onclick="changeColorScheme('tea')" style="animation-delay: 0.95s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #d4b896, #5d4037);"></div><span>Spienione Latte</span>
        </div>
-       <div class="color-scheme" data-theme="gray" onclick="changeColorScheme('gray')">
+       <div class="color-scheme" data-theme="gray" onclick="changeColorScheme('gray')" style="animation-delay: 1s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #e5e7eb, #4b5563);"></div><span>Szary</span>
        </div>
-       <div class="color-scheme" data-theme="blackwhite" onclick="changeColorScheme('blackwhite')">
+       <div class="color-scheme" data-theme="blackwhite" onclick="changeColorScheme('blackwhite')" style="animation-delay: 1.05s;">
         <div class="color-preview" style="background: linear-gradient(135deg, #ffffff, #000000);"></div><span>Czarno-biały</span>
        </div>
       </div>
@@ -1552,12 +1827,12 @@
     <div id="seasonalTab" class="tab-content">
      <div class="settings-section">
       <h3 class="settings-section-title">Motywy Sezonowe</h3>
-      <div class="color-schemes">
+      <div class="color-schemes" id="seasonalSchemesContainer">
        <div class="color-scheme" data-theme="christmas" onclick="changeColorScheme('christmas')">
-        <div class="color-preview" style="background: linear-gradient(135deg, #1a472a 0%, #c41e3a 100%);"></div><span>🎄 Świąteczna Harmonia</span>
+        <div class="color-preview" style="background: linear-gradient(135deg, #1a472a 0%, #c41e3a 100%);"></div><span>🎄 Świąteczna Harmonia<br><small style="font-size: 0.75rem; opacity: 0.8;">Do 1 Stycznia</small></span>
        </div>
        <div class="color-scheme" data-theme="snow" onclick="changeColorScheme('snow')">
-        <div class="color-preview" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #ffffff 100%);"></div><span>❄️ Śnieżna Zadyma</span>
+        <div class="color-preview" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #ffffff 100%);"></div><span>❄️ Śnieżna Zadyma<br><small style="font-size: 0.75rem; opacity: 0.8;">Do 2 Lutego</small></span>
        </div>
       </div>
      </div>
@@ -1568,7 +1843,7 @@
         const prayers = [
             {
                 title: "Ojcze nasz",
-                text: "Ojcze nasz, któryś jest w niebie,\nświęć się Imię Twoje,\nprzyj­dź Królestwo Twoje,\nbądź wola Twoja jako w niebie, tak i na ziemi.\nChleba naszego powszedniego daj nam dzisiaj\ni odpuść nam nasze winy,\njako i my odpuszczamy naszym winowajcom.\nI nie wódź nas na pokuszenie,\nale nas zbaw ode złego. Amen."
+                text: "Ojcze nasz, któryś jest w niebie,\nświęć się Imię Twoje,\nprzyjdź Królestwo Twoje,\nbądź wola Twoja jako w niebie, tak i na ziemi.\nChleba naszego powszedniego daj nam dzisiaj\ni odpuść nam nasze winy,\njako i my odpuszczamy naszym winowajcom.\nI nie wódź nas na pokuszenie,\nale nas zbaw ode złego. Amen."
             },
             {
                 title: "Zdrowaś Maryjo",
@@ -1580,7 +1855,7 @@
             },
             {
                 title: "Wierzę w Boga (Skład Apostolski)",
-                text: "Wierzę w Boga, Ojca Wszechmogącego,\nStworzyciela nieba i ziemi,\ni w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego,\nktóry się począł z Ducha Świętego,\nnarodził się z Maryi Panny,\numęczon pod Ponckim Piłatem,\nukrzyżowan, umarł i pogrzebion;\nzstąpił do piekieł, trzeciego dnia zmartwychwstał;\nwstąpił na niebiosa, siedzi po prawicy Boga Ojca Wszechmogącego,\nstamtąd przyjdzie sądzić żywych i umarłych.\nWierzę w Ducha Świętego,\nświęty Kościół powszechny,\nświętych obcowanie, grzechów odpuszczenie,\nciała zmartwychwstanie, żywot wieczny. Amen."
+                text: "Wierzę w Boga, Ojca Wszechmogącego,\nStworzyciela nieba i ziemi,\ni w Jezusa Chrystusa, Syna Jego jedynego, Pana naszego,\nktóry się począł z Ducha Świętego,\nnarodził się z Maryi Panny,\numęczony pod Ponckim Piłatem,\nukrzyżowany, umarł i pogrzebiony;\nzstąpił do piekieł, trzeciego dnia zmartwychwstał;\nwstąpił na niebiosa, siedzi po prawicy Boga Ojca Wszechmogącego,\nstamtąd przyjdzie sądzić żywych i umarłych.\nWierzę w Ducha Świętego,\nświęty Kościół powszechny,\nświętych obcowanie, grzechów odpuszczenie,\nciała zmartwychwstanie, żywot wieczny. Amen."
             },
             {
                 title: "Pod Twoją obronę",
@@ -1627,7 +1902,7 @@
                 text: "Serce Jezusa, ufam Tobie!"
             },
             {
-                title: "Apel Jasnogórski",
+                title: "Apel Jasnog��rski",
                 text: "Maryjo, Królowo Polski,\njestem przy Tobie, pamiętam, czuwam."
             }
         ];
@@ -1692,13 +1967,15 @@
                     todaysIntention: todaysIntention ? 'tak' : 'nie',
                     historyLength: drawHistory.length,
                     currentStreak,
-                    unlockedTitles: unlockedTitles.length
+                    unlockedTitles: unlockedTitles.length,
+                    secretUnlocked
                 });
             } catch (e) {
                 console.log('Błąd ładowania danych:', e);
                 drawHistory = [];
                 currentStreak = 0;
                 unlockedTitles = [];
+                secretUnlocked = false;
             }
         }
 
@@ -1708,13 +1985,15 @@
         function checkStreakContinuity() {
             if (!lastStreakDate) return;
             
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             const lastDate = new Date(lastStreakDate);
-            lastDate.setHours(0, 0, 0, 0);
-            const diffTime = today - lastDate;
+            const lastStreakDay = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
+            
+            const diffTime = today - lastStreakDay;
             const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
             
+            // Jeśli minęło więcej niż 1 dzień od ostatniego losowania, resetuj passę
             if (diffDays > 1) {
                 const lostStreak = currentStreak;
                 currentStreak = 0;
@@ -1727,37 +2006,436 @@
         }
 
         const titles = [
-            { days: 2, name: "Nowicjusz", gradient: "linear-gradient(135deg, #fbbf24, #f59e0b)", borderColor: "#fbbf24", glowColor: "rgba(251, 191, 36, 0.3)", icon: "🏆", unlocked: false },
-            { days: 5, name: "Uczeń Wytrwałości", gradient: "linear-gradient(135deg, #3b82f6, #1d4ed8)", borderColor: "#3b82f6", glowColor: "rgba(59, 130, 246, 0.3)", icon: "🏆", unlocked: false },
-            { days: 10, name: "Wytrwały Praktykant", gradient: "linear-gradient(135deg, #ec4899, #be185d)", borderColor: "#ec4899", glowColor: "rgba(236, 72, 153, 0.3)", icon: "🏆", unlocked: false },
-            { days: 15, name: "Ogarnięty Dyskretniak", gradient: "linear-gradient(135deg, #f97316, #ea580c)", borderColor: "#f97316", glowColor: "rgba(249, 115, 22, 0.3)", icon: "🏆", unlocked: false },
-            { days: 20, name: "Mistrz Rutyny", gradient: "linear-gradient(135deg, #8b5cf6, #7c3aed)", borderColor: "#8b5cf6", glowColor: "rgba(139, 92, 246, 0.3)", icon: "🏆", unlocked: false },
-            { days: 25, name: "Światło Dyskrecji", gradient: "linear-gradient(135deg, #ef4444, #dc2626)", borderColor: "#ef4444", glowColor: "rgba(239, 68, 68, 0.3)", icon: "🏆", unlocked: false },
-            { days: 30, name: "Duchowny Weteran", gradient: "linear-gradient(135deg, #fbbf24, #f59e0b)", borderColor: "#fbbf24", glowColor: "rgba(251, 191, 36, 0.3)", icon: "🏆", unlocked: false },
-            { days: 35, name: "Świadek Tajemnicy", gradient: "linear-gradient(135deg, #60a5fa, #1e40af)", borderColor: "#60a5fa", glowColor: "rgba(96, 165, 250, 0.3)", icon: "🏆", unlocked: false },
-            { days: 40, name: "Wytrawny Skromniak", gradient: "linear-gradient(135deg, #a855f7, #ec4899)", borderColor: "#a855f7", glowColor: "rgba(168, 85, 247, 0.3)", icon: "🏆", unlocked: false },
-            { days: 45, name: "Zakulisowy Modlitewnik", gradient: "linear-gradient(135deg, #ef4444, #fbbf24)", borderColor: "#ef4444", glowColor: "rgba(239, 68, 68, 0.3)", icon: "🏆", unlocked: false },
-            { days: 50, name: "Niewidoczny ale skuteczny", gradient: "linear-gradient(135deg, #6b7280, #111827)", borderColor: "#6b7280", glowColor: "rgba(107, 114, 128, 0.3)", icon: "🏆", unlocked: false, animated: true },
-            { days: 55, name: "Cichy Przewodnik", gradient: "linear-gradient(135deg, #22c55e, #16a34a)", borderColor: "#22c55e", glowColor: "rgba(34, 197, 94, 0.3)", icon: "🏆", unlocked: false },
-            { days: 60, name: "Latarnia Modlitwy", gradient: "linear-gradient(135deg, #0ea5e9, #94a3b8)", borderColor: "#0ea5e9", glowColor: "rgba(14, 165, 233, 0.3)", icon: "🏆", unlocked: false },
-            { days: 65, name: "Strażnik Spokoju", gradient: "linear-gradient(135deg, #14b8a6, #0891b2)", borderColor: "#14b8a6", glowColor: "rgba(20, 184, 166, 0.3)", icon: "🏆", unlocked: false },
-            { days: 70, name: "Kroczący Światłem Modlitwy", gradient: "linear-gradient(135deg, #06b6d4, #94a3b8)", borderColor: "#06b6d4", glowColor: "rgba(6, 182, 212, 0.3)", icon: "🏆", unlocked: false },
-            { days: 75, name: "Dyskretniacki Pielgrzym", gradient: "linear-gradient(135deg, #a16207, #eab308)", borderColor: "#a16207", glowColor: "rgba(161, 98, 7, 0.3)", icon: "🏆", unlocked: false }
+            { 
+                days: 2, 
+                name: "Nowicjusz", 
+                christmasName: "Mały Pomocnik Świętego Mikołaja",
+                snowName: "Pierwszy Płatek ��niegu",
+                gradient: "linear-gradient(135deg, #fbbf24, #f59e0b)", 
+                christmasGradient: "linear-gradient(135deg, #c41e3a, #dc2626)",
+                snowGradient: "linear-gradient(135deg, #e0f2fe, #bae6fd)",
+                borderColor: "#fbbf24", 
+                christmasBorderColor: "#c41e3a",
+                snowBorderColor: "#bae6fd",
+                glowColor: "rgba(251, 191, 36, 0.3)", 
+                christmasGlowColor: "rgba(196, 30, 58, 0.3)",
+                snowGlowColor: "rgba(186, 230, 253, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "🎅",
+                snowIcon: "❄️",
+                unlocked: false 
+            },
+            { 
+                days: 5, 
+                name: "Uczeń Wytrwałości", 
+                christmasName: "Strażnik Adwentu",
+                snowName: "Mroźny Wędrowiec",
+                gradient: "linear-gradient(135deg, #3b82f6, #1d4ed8)", 
+                christmasGradient: "linear-gradient(135deg, #22c55e, #16a34a)",
+                snowGradient: "linear-gradient(135deg, #bae6fd, #0ea5e9)",
+                borderColor: "#3b82f6", 
+                christmasBorderColor: "#22c55e",
+                snowBorderColor: "#0ea5e9",
+                glowColor: "rgba(59, 130, 246, 0.3)", 
+                christmasGlowColor: "rgba(34, 197, 94, 0.3)",
+                snowGlowColor: "rgba(14, 165, 233, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "🕯️",
+                snowIcon: "⛄",
+                unlocked: false 
+            },
+            { 
+                days: 10, 
+                name: "Wytrwały Praktykant", 
+                christmasName: "Wielbiciel Szopki",
+                snowName: "Mistrz Sopli Lodowych",
+                gradient: "linear-gradient(135deg, #ec4899, #be185d)", 
+                christmasGradient: "linear-gradient(135deg, #8b4513, #d4a574)",
+                snowGradient: "linear-gradient(135deg, #ffffff, #cbd5e1)",
+                borderColor: "#ec4899", 
+                christmasBorderColor: "#8b4513",
+                snowBorderColor: "#cbd5e1",
+                glowColor: "rgba(236, 72, 153, 0.3)", 
+                christmasGlowColor: "rgba(139, 69, 19, 0.3)",
+                snowGlowColor: "rgba(203, 213, 225, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "⭐",
+                snowIcon: "🧊",
+                unlocked: false 
+            },
+            { 
+                days: 15, 
+                name: "Ogarnięty Dyskretniak", 
+                christmasName: "Śnieżny Anioł",
+                snowName: "Lodowy Anioł",
+                gradient: "linear-gradient(135deg, #f97316, #ea580c)", 
+                christmasGradient: "linear-gradient(135deg, #ffffff, #e0f2fe)",
+                snowGradient: "linear-gradient(135deg, #f0f9ff, #e0f2fe)",
+                borderColor: "#f97316", 
+                christmasBorderColor: "#ffffff",
+                snowBorderColor: "#e0f2fe",
+                glowColor: "rgba(249, 115, 22, 0.3)", 
+                christmasGlowColor: "rgba(255, 255, 255, 0.5)",
+                snowGlowColor: "rgba(224, 242, 254, 0.6)",
+                icon: "��", 
+                christmasIcon: "👼",
+                snowIcon: "👼",
+                unlocked: false 
+            },
+            { 
+                days: 20, 
+                name: "Mistrz Rutyny", 
+                christmasName: "Strażnik Choinki",
+                snowName: "Architekt Bałwana",
+                gradient: "linear-gradient(135deg, #8b5cf6, #7c3aed)", 
+                christmasGradient: "linear-gradient(135deg, #15803d, #22c55e)",
+                snowGradient: "linear-gradient(135deg, #ffffff, #94a3b8)",
+                borderColor: "#8b5cf6", 
+                christmasBorderColor: "#15803d",
+                snowBorderColor: "#94a3b8",
+                glowColor: "rgba(139, 92, 246, 0.3)", 
+                christmasGlowColor: "rgba(21, 128, 61, 0.3)",
+                snowGlowColor: "rgba(148, 163, 184, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "🎄",
+                snowIcon: "☃️",
+                unlocked: false 
+            },
+            { 
+                days: 25, 
+                name: "Światło Dyskrecji", 
+                christmasName: "Niosący Światło Betlejemskie",
+                snowName: "Kryształowy Strażnik",
+                gradient: "linear-gradient(135deg, #ef4444, #dc2626)", 
+                christmasGradient: "linear-gradient(135deg, #fbbf24, #f59e0b)",
+                snowGradient: "linear-gradient(135deg, #bae6fd, #ffffff)",
+                borderColor: "#ef4444", 
+                christmasBorderColor: "#fbbf24",
+                snowBorderColor: "#bae6fd",
+                glowColor: "rgba(239, 68, 68, 0.3)", 
+                christmasGlowColor: "rgba(251, 191, 36, 0.5)",
+                snowGlowColor: "rgba(186, 230, 253, 0.6)",
+                icon: "🏆", 
+                christmasIcon: "🕯️",
+                snowIcon: "💎",
+                unlocked: false 
+            },
+            { 
+                days: 30, 
+                name: "Duchowny Weteran", 
+                christmasName: "Pasterz Wigilii",
+                snowName: "Władca Zamieci",
+                gradient: "linear-gradient(135deg, #fbbf24, #f59e0b)", 
+                christmasGradient: "linear-gradient(135deg, #8b4513, #cd853f)",
+                snowGradient: "linear-gradient(135deg, #0284c7, #38bdf8)",
+                borderColor: "#fbbf24", 
+                christmasBorderColor: "#8b4513",
+                snowBorderColor: "#0284c7",
+                glowColor: "rgba(251, 191, 36, 0.3)", 
+                christmasGlowColor: "rgba(139, 69, 19, 0.3)",
+                snowGlowColor: "rgba(2, 132, 199, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "🐑",
+                snowIcon: "🌨️",
+                unlocked: false 
+            },
+            { 
+                days: 35, 
+                name: "Świadek Tajemnicy", 
+                christmasName: "Mędrec ze Wschodu",
+                snowName: "Śnieżna Królowa",
+                gradient: "linear-gradient(135deg, #60a5fa, #1e40af)", 
+                christmasGradient: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                snowGradient: "linear-gradient(135deg, #e0f2fe, #60a5fa)",
+                borderColor: "#60a5fa", 
+                christmasBorderColor: "#6366f1",
+                snowBorderColor: "#60a5fa",
+                glowColor: "rgba(96, 165, 250, 0.3)", 
+                christmasGlowColor: "rgba(99, 102, 241, 0.3)",
+                snowGlowColor: "rgba(96, 165, 250, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "👑",
+                snowIcon: "👑",
+                unlocked: false 
+            },
+            { 
+                days: 40, 
+                name: "Wytrawny Skromniak", 
+                christmasName: "Dzwoneczek Radości",
+                snowName: "Zimowy Wiatr",
+                gradient: "linear-gradient(135deg, #a855f7, #ec4899)", 
+                christmasGradient: "linear-gradient(135deg, #ffd700, #ffed4e)",
+                snowGradient: "linear-gradient(135deg, #bae6fd, #cbd5e1)",
+                borderColor: "#a855f7", 
+                christmasBorderColor: "#ffd700",
+                snowBorderColor: "#bae6fd",
+                glowColor: "rgba(168, 85, 247, 0.3)", 
+                christmasGlowColor: "rgba(255, 215, 0, 0.4)",
+                snowGlowColor: "rgba(186, 230, 253, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "🔔",
+                snowIcon: "💨",
+                unlocked: false 
+            },
+            { 
+                days: 45, 
+                name: "Zakulisowy Modlitewnik", 
+                christmasName: "Nocny Kolędnik",
+                snowName: "Śpiewak Mrozu",
+                gradient: "linear-gradient(135deg, #ef4444, #fbbf24)", 
+                christmasGradient: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
+                snowGradient: "linear-gradient(135deg, #0ea5e9, #38bdf8)",
+                borderColor: "#ef4444", 
+                christmasBorderColor: "#1e3a8a",
+                snowBorderColor: "#0ea5e9",
+                glowColor: "rgba(239, 68, 68, 0.3)", 
+                christmasGlowColor: "rgba(30, 58, 138, 0.3)",
+                snowGlowColor: "rgba(14, 165, 233, 0.4)",
+                icon: "����", 
+                christmasIcon: "🎵",
+                snowIcon: "🎵",
+                unlocked: false 
+            },
+            { 
+                days: 50, 
+                name: "Niewidoczny ale skuteczny", 
+                christmasName: "Duch Bożego Narodzenia",
+                snowName: "Duch Zamieci",
+                gradient: "linear-gradient(135deg, #6b7280, #111827)", 
+                christmasGradient: "linear-gradient(135deg, #c41e3a, #22c55e, #ffffff)",
+                snowGradient: "linear-gradient(135deg, #e0f2fe, #bae6fd, #ffffff)",
+                borderColor: "#6b7280", 
+                christmasBorderColor: "#c41e3a",
+                snowBorderColor: "#e0f2fe",
+                glowColor: "rgba(107, 114, 128, 0.3)", 
+                christmasGlowColor: "rgba(196, 30, 58, 0.4)",
+                snowGlowColor: "rgba(224, 242, 254, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "✨",
+                snowIcon: "❄️",
+                unlocked: false, 
+                animated: true 
+            },
+            { 
+                days: 55, 
+                name: "Cichy Przewodnik", 
+                christmasName: "Gwiazda Betlejemska",
+                snowName: "Gwiazda Polararna",
+                gradient: "linear-gradient(135deg, #22c55e, #16a34a)", 
+                christmasGradient: "linear-gradient(135deg, #ffd700, #ffffff)",
+                snowGradient: "linear-gradient(135deg, #ffffff, #bae6fd)",
+                borderColor: "#22c55e", 
+                christmasBorderColor: "#ffd700",
+                snowBorderColor: "#ffffff",
+                glowColor: "rgba(34, 197, 94, 0.3)", 
+                christmasGlowColor: "rgba(255, 215, 0, 0.5)",
+                snowGlowColor: "rgba(255, 255, 255, 0.7)",
+                icon: "🏆", 
+                christmasIcon: "⭐",
+                snowIcon: "⭐",
+                unlocked: false 
+            },
+            { 
+                days: 60, 
+                name: "Latarnia Modlitwy", 
+                christmasName: "Strażnik Stajenki",
+                snowName: "Latarnia Polarna",
+                gradient: "linear-gradient(135deg, #0ea5e9, #94a3b8)", 
+                christmasGradient: "linear-gradient(135deg, #8b4513, #d2691e)",
+                snowGradient: "linear-gradient(135deg, #38bdf8, #f0f9ff)",
+                borderColor: "#0ea5e9", 
+                christmasBorderColor: "#8b4513",
+                snowBorderColor: "#38bdf8",
+                glowColor: "rgba(14, 165, 233, 0.3)", 
+                christmasGlowColor: "rgba(139, 69, 19, 0.3)",
+                snowGlowColor: "rgba(56, 189, 248, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "🏠",
+                snowIcon: "🏔️",
+                unlocked: false 
+            },
+            { 
+                days: 65, 
+                name: "Strażnik Spokoju", 
+                christmasName: "Anioł Pokoju",
+                snowName: "Śnieżny Anioł Spokoju",
+                gradient: "linear-gradient(135deg, #14b8a6, #0891b2)", 
+                christmasGradient: "linear-gradient(135deg, #e0f2fe, #bae6fd)",
+                snowGradient: "linear-gradient(135deg, #f0f9ff, #bae6fd)",
+                borderColor: "#14b8a6", 
+                christmasBorderColor: "#bae6fd",
+                snowBorderColor: "#f0f9ff",
+                glowColor: "rgba(20, 184, 166, 0.3)", 
+                christmasGlowColor: "rgba(186, 230, 253, 0.5)",
+                snowGlowColor: "rgba(240, 249, 255, 0.6)",
+                icon: "🏆", 
+                christmasIcon: "👼",
+                snowIcon: "👼",
+                unlocked: false 
+            },
+            { 
+                days: 70, 
+                name: "Kroczący Światłem Modlitwy", 
+                christmasName: "Święty Wędrowiec",
+                snowName: "Lodowy Wędrowiec",
+                gradient: "linear-gradient(135deg, #06b6d4, #94a3b8)", 
+                christmasGradient: "linear-gradient(135deg, #dc2626, #fbbf24)",
+                snowGradient: "linear-gradient(135deg, #0284c7, #cbd5e1)",
+                borderColor: "#06b6d4", 
+                christmasBorderColor: "#dc2626",
+                snowBorderColor: "#0284c7",
+                glowColor: "rgba(6, 182, 212, 0.3)", 
+                christmasGlowColor: "rgba(220, 38, 38, 0.3)",
+                snowGlowColor: "rgba(2, 132, 199, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "🎅",
+                snowIcon: "🧊",
+                unlocked: false 
+            },
+            { 
+                days: 75, 
+                name: "Dyskretniacki Pielgrzym", 
+                christmasName: "Niosący Dary",
+                snowName: "Niosący Śnieg",
+                gradient: "linear-gradient(135deg, #a16207, #eab308)", 
+                christmasGradient: "linear-gradient(135deg, #ffd700, #ff6b6b)",
+                snowGradient: "linear-gradient(135deg, #ffffff, #e0f2fe)",
+                borderColor: "#a16207", 
+                christmasBorderColor: "#ffd700",
+                snowBorderColor: "#ffffff",
+                glowColor: "rgba(161, 98, 7, 0.3)", 
+                christmasGlowColor: "rgba(255, 215, 0, 0.4)",
+                snowGlowColor: "rgba(255, 255, 255, 0.6)",
+                icon: "🏆", 
+                christmasIcon: "🎁",
+                snowIcon: "❄️",
+                unlocked: false 
+            },
+            { 
+                days: 80, 
+                name: "Pielgrzym Ciszy", 
+                christmasName: "Cichej Nocy Świadek",
+                snowName: "Cichej Zamieci Świadek",
+                gradient: "linear-gradient(135deg, #1e3a8a, #3b82f6)", 
+                christmasGradient: "linear-gradient(135deg, #1e3a8a, #ffffff)",
+                snowGradient: "linear-gradient(135deg, #bae6fd, #ffffff)",
+                borderColor: "#1e3a8a", 
+                christmasBorderColor: "#1e3a8a",
+                snowBorderColor: "#bae6fd",
+                glowColor: "rgba(30, 58, 138, 0.3)", 
+                christmasGlowColor: "rgba(30, 58, 138, 0.4)",
+                snowGlowColor: "rgba(186, 230, 253, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "🌙",
+                snowIcon: "🌙",
+                unlocked: false 
+            },
+            { 
+                days: 85, 
+                name: "Wędrowiec Światła", 
+                christmasName: "Różaniec Świąteczny",
+                snowName: "Lodowy Różaniec",
+                gradient: "linear-gradient(135deg, #831843, #db2777)", 
+                christmasGradient: "linear-gradient(135deg, #be185d, #fdf2f8)",
+                snowGradient: "linear-gradient(135deg, #38bdf8, #f0f9ff)",
+                borderColor: "#831843", 
+                christmasBorderColor: "#be185d",
+                snowBorderColor: "#38bdf8",
+                glowColor: "rgba(131, 24, 67, 0.3)", 
+                christmasGlowColor: "rgba(190, 24, 93, 0.3)",
+                snowGlowColor: "rgba(56, 189, 248, 0.4)",
+                icon: "🏆", 
+                christmasIcon: "📿",
+                snowIcon: "���",
+                unlocked: false 
+            },
+            { 
+                days: 90, 
+                name: "Przenikliwy Dyskretniak", 
+                christmasName: "Zielony Strażnik Nadziei",
+                snowName: "Biały Strażnik Nadziei",
+                gradient: "linear-gradient(135deg, #047857, #10b981)", 
+                christmasGradient: "linear-gradient(135deg, #14532d, #22c55e)",
+                snowGradient: "linear-gradient(135deg, #f0f9ff, #bae6fd)",
+                borderColor: "#047857", 
+                christmasBorderColor: "#14532d",
+                snowBorderColor: "#f0f9ff",
+                glowColor: "rgba(4, 120, 87, 0.3)", 
+                christmasGlowColor: "rgba(20, 83, 45, 0.4)",
+                snowGlowColor: "rgba(240, 249, 255, 0.5)",
+                icon: "🏆", 
+                christmasIcon: "🌲",
+                snowIcon: "🏔️",
+                unlocked: false 
+            },
+            { 
+                days: 95, 
+                name: "Płomień Wytrwałości", 
+                christmasName: "Ognisko Betlejemskie",
+                snowName: "Lodowy Płomień",
+                gradient: "linear-gradient(135deg, #ff6b35, #ff8c42)", 
+                christmasGradient: "linear-gradient(135deg, #ff4500, #ffa500)",
+                snowGradient: "linear-gradient(135deg, #0ea5e9, #38bdf8)",
+                borderColor: "#ff6b35", 
+                christmasBorderColor: "#ff4500",
+                snowBorderColor: "#0ea5e9",
+                glowColor: "rgba(255, 107, 53, 0.3)", 
+                christmasGlowColor: "rgba(255, 69, 0, 0.4)",
+                snowGlowColor: "rgba(14, 165, 233, 0.5)",
+                icon: "🔥", 
+                christmasIcon: "🔥",
+                snowIcon: "🧊",
+                unlocked: false 
+            },
+            { 
+                days: 100, 
+                name: "Cichy Filar Dyskrecji", 
+                christmasName: "Świąteczny Archanioł",
+                snowName: "Lodowy Archanioł",
+                gradient: "linear-gradient(135deg, #475569, #1e40af)", 
+                christmasGradient: "linear-gradient(135deg, #ffd700, #ffffff, #c41e3a)",
+                snowGradient: "linear-gradient(135deg, #e0f2fe, #bae6fd, #ffffff)",
+                borderColor: "#475569", 
+                christmasBorderColor: "#ffd700",
+                snowBorderColor: "#e0f2fe",
+                glowColor: "rgba(71, 85, 105, 0.3)", 
+                christmasGlowColor: "rgba(255, 215, 0, 0.5)",
+                snowGlowColor: "rgba(224, 242, 254, 0.6)",
+                icon: "⚡", 
+                christmasIcon: "👼",
+                snowIcon: "❄️",
+                unlocked: false, 
+                animated: true 
+            }
         ];
 
         function updateStreak() {
-            const today = new Date().toDateString();
-            const yesterday = new Date();
-            yesterday.setDate(yesterday.getDate() - 1);
-            const yesterdayStr = yesterday.toDateString();
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             
-            if (!lastStreakDate || lastStreakDate === yesterdayStr) {
-                currentStreak++;
-            } else if (lastStreakDate !== today) {
+            if (!lastStreakDate) {
+                // Pierwsza passa
                 currentStreak = 1;
+            } else {
+                const lastDate = new Date(lastStreakDate);
+                const lastStreakDay = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
+                
+                const yesterday = new Date(today);
+                yesterday.setDate(yesterday.getDate() - 1);
+                
+                // Jeśli ostatnie losowanie było wczoraj, kontynuuj passę
+                if (lastStreakDay.getTime() === yesterday.getTime()) {
+                    currentStreak++;
+                } else if (lastStreakDay.getTime() === today.getTime()) {
+                    // Ten sam dzień - nie zmieniaj passy
+                    return;
+                } else {
+                    // Przerwa w passie - rozpocznij od nowa
+                    currentStreak = 1;
+                }
             }
             
-            lastStreakDate = today;
+            lastStreakDate = now.toISOString();
             checkNewTitles();
         }
 
@@ -1793,8 +2471,16 @@
                 box-shadow: 0 8px 32px rgba(0,0,0,0.3);
                 animation: titlePop 3s ease-out forwards;
                 transition: all 0.5s ease;
+                text-align: center;
             `;
-            notification.innerHTML = `🏆 Nowy tytuł odblokowany!<br>"${title.name}"`;
+            
+            const line1 = document.createElement('div');
+            line1.textContent = '🏆 Nowy tytuł odblokowany!';
+            notification.appendChild(line1);
+            
+            const line2 = document.createElement('div');
+            line2.textContent = '"' + title.name + '"';
+            notification.appendChild(line2);
             
             document.body.appendChild(notification);
             
@@ -1842,6 +2528,8 @@
             }
         }
 
+
+
         function getStreakMessage() {
             if (currentStreak === 0) return '';
             if (currentStreak === 1) return '🔥 Pierwszy dzień modlitwy!';
@@ -1871,8 +2559,8 @@
                 }
                 
                 const message = daysLeft === 1 
-                    ? `⭐ Jutro zdobędziesz tytuł "${nextTitle.name}"!`
-                    : `⭐ Za ${daysLeft} dni zdobędziesz tytuł "${nextTitle.name}"!`;
+                    ? '⭐ Jutro zdobędziesz tytuł "' + nextTitle.name + '"!'
+                    : '⭐ Za ' + daysLeft + ' dni zdobędziesz tytuł "' + nextTitle.name + '"!';
                 
                 notificationElement.textContent = message;
                 notificationElement.style.display = 'block';
@@ -1901,14 +2589,23 @@
         }
 
         function canDrawToday() {
-            const today = new Date().toDateString();
-            return lastDrawDate !== today;
+            if (!lastDrawDate) return true;
+            
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const lastDraw = new Date(lastDrawDate);
+            const lastDrawDay = new Date(lastDraw.getFullYear(), lastDraw.getMonth(), lastDraw.getDate());
+            
+            // Jeśli to inny dzień, można losować
+            return today.getTime() !== lastDrawDay.getTime();
         }
 
         function updateDrawButton() {
             const button = document.getElementById('drawButton');
             const highestTitle = getHighestUnlockedTitle();
             const lostStreak = parseInt(localStorage.getItem('lostStreak') || '0');
+            const isChristmas = document.body.classList.contains('theme-christmas');
+            const isSnow = document.body.classList.contains('theme-snow');
             
             if (canDrawToday()) {
                 button.disabled = false;
@@ -1925,8 +2622,19 @@
             
             if (highestTitle) {
                 button.className = 'draw-button title-border';
-                button.style.setProperty('--title-color', highestTitle.borderColor);
-                button.style.setProperty('--title-glow', highestTitle.glowColor);
+                let borderColor = highestTitle.borderColor;
+                let glowColor = highestTitle.glowColor;
+                
+                if (isChristmas) {
+                    borderColor = highestTitle.christmasBorderColor;
+                    glowColor = highestTitle.christmasGlowColor;
+                } else if (isSnow) {
+                    borderColor = highestTitle.snowBorderColor;
+                    glowColor = highestTitle.snowGlowColor;
+                }
+                
+                button.style.setProperty('--title-color', borderColor);
+                button.style.setProperty('--title-glow', glowColor);
             } else {
                 button.className = 'draw-button';
             }
@@ -1947,8 +2655,14 @@
         }
 
         function showTodaysResults() {
-            const today = new Date().toDateString();
-            if (lastDrawDate === today && todaysPrayer && todaysIntention) {
+            if (!lastDrawDate || !todaysPrayer || !todaysIntention) return;
+            
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const lastDraw = new Date(lastDrawDate);
+            const lastDrawDay = new Date(lastDraw.getFullYear(), lastDraw.getMonth(), lastDraw.getDate());
+            
+            if (today.getTime() === lastDrawDay.getTime()) {
                 const resultsArea = document.getElementById('resultsArea');
                 
                 const prayerObj = prayers.find(p => p.title === todaysPrayer) || { title: todaysPrayer, text: todaysPrayer };
@@ -1989,8 +2703,10 @@
                 streakSection.insertBefore(lostStreakElement, streakSection.firstChild);
             }
             
-            lostStreakElement.innerHTML = `💔 Utraciłeś: ${lostStreak} ${lostStreak === 1 ? 'dzień' : 'dni'} passy.<br>Możesz zacząć od nowa naciskając przycisk losuj`;
+            const message = '💔 Utraciłeś: ' + lostStreak + ' ' + (lostStreak === 1 ? 'dzień' : 'dni') + ' passy.\nMożesz zacząć od nowa naciskając przycisk losuj';
+            lostStreakElement.textContent = message;
             lostStreakElement.style.display = 'block';
+            lostStreakElement.style.whiteSpace = 'pre-line';
             streakSection.style.display = 'block';
         }
 
@@ -2000,22 +2716,42 @@
                 const streakElement = document.getElementById('streakMessage');
                 const titleElement = document.getElementById('currentTitle');
                 const highestTitle = getHighestUnlockedTitle();
+                const isChristmas = document.body.classList.contains('theme-christmas');
+                const isSnow = document.body.classList.contains('theme-snow');
                 
                 document.getElementById('streakSection').style.display = 'block';
                 streakElement.textContent = streakMessage;
                 
                 if (highestTitle) {
                     streakElement.className = 'streak-message title-border';
-                    streakElement.style.setProperty('--title-color', highestTitle.borderColor);
-                    streakElement.style.setProperty('--title-glow', highestTitle.glowColor);
-                    streakElement.style.setProperty('--title-bg', highestTitle.borderColor + '15');
                     
-                    titleElement.textContent = highestTitle.name;
+                    let borderColor = highestTitle.borderColor;
+                    let glowColor = highestTitle.glowColor;
+                    let displayGradient = highestTitle.gradient;
+                    let displayName = highestTitle.name;
+                    
+                    if (isChristmas) {
+                        borderColor = highestTitle.christmasBorderColor;
+                        glowColor = highestTitle.christmasGlowColor;
+                        displayGradient = highestTitle.christmasGradient;
+                        displayName = highestTitle.christmasName;
+                    } else if (isSnow) {
+                        borderColor = highestTitle.snowBorderColor;
+                        glowColor = highestTitle.snowGlowColor;
+                        displayGradient = highestTitle.snowGradient;
+                        displayName = highestTitle.snowName;
+                    }
+                    
+                    streakElement.style.setProperty('--title-color', borderColor);
+                    streakElement.style.setProperty('--title-glow', glowColor);
+                    streakElement.style.setProperty('--title-bg', borderColor + '15');
+                    
+                    titleElement.textContent = displayName;
                     if (highestTitle.animated) {
                         titleElement.className = 'current-title animated';
                     } else {
                         titleElement.className = 'current-title';
-                        titleElement.style.background = highestTitle.gradient;
+                        titleElement.style.background = displayGradient;
                         titleElement.style.webkitBackgroundClip = 'text';
                         titleElement.style.webkitTextFillColor = 'transparent';
                         titleElement.style.backgroundClip = 'text';
@@ -2097,15 +2833,15 @@
                     
                     drawingArea.innerHTML = '';
                     
-                    const today = new Date().toDateString();
-                    lastDrawDate = today;
+                    const today = new Date();
+                    lastDrawDate = today.toISOString();
                     todaysPrayer = selectedPrayer.title;
                     todaysIntention = selectedIntention;
                     
                     updateStreak();
                     
                     drawHistory.unshift({
-                        date: today,
+                        date: new Date().toISOString(),
                         prayer: selectedPrayer.title,
                         intention: selectedIntention,
                         streak: currentStreak
@@ -2159,42 +2895,77 @@
 
         function updateTitlesDisplay() {
             const container = document.getElementById('titlesContainer');
+            const isChristmas = document.body.classList.contains('theme-christmas');
+            const isSnow = document.body.classList.contains('theme-snow');
             
-            const unlockedTitles_html = [];
-            const lockedTitles_html = [];
+            container.innerHTML = '';
+            
+            const unlockedTitles_elements = [];
+            const lockedTitles_elements = [];
             
             titles.forEach((title, index) => {
                 const isUnlocked = unlockedTitles.includes(title.name);
                 const progress = Math.min((currentStreak / title.days) * 100, 100);
                 
-                const titleHtml = `
-                    <div class="title-card ${isUnlocked ? 'unlocked' : 'locked'}" style="--gradient: ${title.gradient}; animation-delay: ${index * 0.1}s;">
-                        <div class="title-name ${title.animated ? 'animated' : ''}" style="background: ${title.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                            <div class="title-icon">
-                                ${title.icon}
-                            </div>
-                            ${title.name}
-                        </div>
-                        <div class="title-requirement">
-                            ${isUnlocked ? 'Odblokowany!' : `Wymagane: ${title.days} dni z rzędu`}
-                        </div>
-                        <div class="title-progress">
-                            <div class="title-progress-bar ${title.animated ? 'animated' : ''}" style="width: ${progress}%; background: ${title.gradient};"></div>
-                        </div>
-                        <div class="title-status ${isUnlocked ? 'unlocked' : 'locked'}">
-                            ${isUnlocked ? '✅ Zdobyty' : `${currentStreak}/${title.days} dni`}
-                        </div>
-                    </div>
-                `;
+                let displayName = title.name;
+                let displayIcon = title.icon;
+                let displayGradient = title.gradient;
+                
+                if (isChristmas) {
+                    displayName = title.christmasName;
+                    displayIcon = title.christmasIcon;
+                    displayGradient = title.christmasGradient;
+                } else if (isSnow) {
+                    displayName = title.snowName;
+                    displayIcon = title.snowIcon;
+                    displayGradient = title.snowGradient;
+                }
+                
+                const titleCard = document.createElement('div');
+                titleCard.className = `title-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+                titleCard.style.cssText = `--gradient: ${displayGradient}; animation-delay: ${index * 0.1}s;`;
+                
+                const titleNameDiv = document.createElement('div');
+                titleNameDiv.className = `title-name ${title.animated ? 'animated' : ''}`;
+                
+                const iconDiv = document.createElement('div');
+                iconDiv.className = 'title-icon';
+                iconDiv.textContent = displayIcon;
+                
+                titleNameDiv.appendChild(iconDiv);
+                titleNameDiv.appendChild(document.createTextNode(displayName));
+                
+                const requirementDiv = document.createElement('div');
+                requirementDiv.className = 'title-requirement';
+                requirementDiv.textContent = isUnlocked ? 'Odblokowany!' : `Wymagane: ${title.days} dni z rzędu`;
+                
+                const progressDiv = document.createElement('div');
+                progressDiv.className = 'title-progress';
+                
+                const progressBar = document.createElement('div');
+                progressBar.className = `title-progress-bar ${title.animated ? 'animated' : ''}`;
+                progressBar.style.cssText = `width: ${progress}%; background: ${displayGradient};`;
+                
+                progressDiv.appendChild(progressBar);
+                
+                const statusDiv = document.createElement('div');
+                statusDiv.className = `title-status ${isUnlocked ? 'unlocked' : 'locked'}`;
+                statusDiv.textContent = isUnlocked ? '✅ Zdobyty' : `${currentStreak}/${title.days} dni`;
+                
+                titleCard.appendChild(titleNameDiv);
+                titleCard.appendChild(requirementDiv);
+                titleCard.appendChild(progressDiv);
+                titleCard.appendChild(statusDiv);
                 
                 if (isUnlocked) {
-                    unlockedTitles_html.push(titleHtml);
+                    unlockedTitles_elements.push(titleCard);
                 } else {
-                    lockedTitles_html.push(titleHtml);
+                    lockedTitles_elements.push(titleCard);
                 }
             });
             
-            container.innerHTML = unlockedTitles_html.join('') + lockedTitles_html.join('');
+            unlockedTitles_elements.forEach(el => container.appendChild(el));
+            lockedTitles_elements.forEach(el => container.appendChild(el));
         }
 
         function saveAllData() {
@@ -2246,6 +3017,14 @@
             document.body.classList.add(`theme-${theme}`);
             
             localStorage.setItem('selectedTheme', theme);
+            
+            // Odśwież wyświetlanie przy zmianie motywu
+            updateDrawButton();
+            updateTitlesButton();
+            showStreak();
+            if (document.getElementById('titlesModal').classList.contains('show')) {
+                updateTitlesDisplay();
+            }
         }
 
         function changeFontStyle(fontStyle) {
@@ -2286,11 +3065,25 @@
         function updateTitlesButton() {
             const button = document.getElementById('titlesButton');
             const highestTitle = getHighestUnlockedTitle();
+            const isChristmas = document.body.classList.contains('theme-christmas');
+            const isSnow = document.body.classList.contains('theme-snow');
             
             if (highestTitle) {
                 button.className = 'titles-button title-border';
-                button.style.setProperty('--title-color', highestTitle.borderColor);
-                button.style.setProperty('--title-glow', highestTitle.glowColor);
+                
+                let borderColor = highestTitle.borderColor;
+                let glowColor = highestTitle.glowColor;
+                
+                if (isChristmas) {
+                    borderColor = highestTitle.christmasBorderColor;
+                    glowColor = highestTitle.christmasGlowColor;
+                } else if (isSnow) {
+                    borderColor = highestTitle.snowBorderColor;
+                    glowColor = highestTitle.snowGlowColor;
+                }
+                
+                button.style.setProperty('--title-color', borderColor);
+                button.style.setProperty('--title-glow', glowColor);
             } else {
                 button.className = 'titles-button';
             }
@@ -2402,8 +3195,13 @@
                     opacity: 0;
                 }
             }
+
+            @keyframes gradientFlow {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
         `;
         document.head.appendChild(style);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a745d092577dc88',t:'MTc2NDYxMDc2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a8442cba102c051',t:'MTc2NDc3NzQ1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

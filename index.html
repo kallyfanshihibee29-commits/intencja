@@ -151,7 +151,7 @@
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
-        /* Kolory w kolejności tęczy: Czerwony → Pomarańczowy → Żółty → Zielony → Niebieski → Fioletowy → Pozostałe */
+        /* Kolory w kolejności tęczy: Czerwony ���� Pomarańczowy → Żółty → Zielony → Niebieski → Fioletowy → Pozostałe */
         
         .theme-lightrose {
             --bg: #ffe4e6;
@@ -1996,7 +1996,7 @@
             },
             {
                 title: "Zdrowaś Maryjo",
-                text: "Zdrowaś Maryjo, łaski pełna,\nPan z Tobą,\nbłogosławionaś Ty między niewiastami\ni błogosławiony owoc żywota Twojego, Jezus.\nŚwięta Maryjo, Matko Boża,\nmódl się za nami grzesznymi,\nteraz i w godzinę śmierci naszej. Amen."
+                text: "Zdrowaś Maryjo, łaski pełna,\nPan z Tobą,\nbłogosławionaś Ty między niewiastami\ni błogosławiony owoc żywota Twojego, Jezus.\nŚwięta Maryjo, Matko Boża,\nmódl się za nami grzesznymi,\nteraz i w godzinę ��mierci naszej. Amen."
             },
             {
                 title: "Chwała Ojcu",
@@ -2500,8 +2500,8 @@
                 christmasGlowColor: "rgba(190, 24, 93, 0.3)",
                 snowGlowColor: "rgba(56, 189, 248, 0.4)",
                 icon: "🏆", 
-                christmasIcon: "📿",
-                snowIcon: "📿",
+                christmasIcon: "���",
+                snowIcon: "���",
                 unlocked: false 
             },
             { 
@@ -2905,12 +2905,13 @@
             if (!lastDrawDate) return true;
             
             const now = new Date();
-            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             const lastDraw = new Date(lastDrawDate);
-            const lastDrawDay = new Date(lastDraw.getFullYear(), lastDraw.getMonth(), lastDraw.getDate());
             
-            // Jeśli to inny dzień, można losować
-            return today.getTime() !== lastDrawDay.getTime();
+            // Sprawdź czy minęła północ od ostatniego losowania
+            const midnightToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+            
+            // Jeśli ostatnie losowanie było przed dzisiejszą północą, można losować ponownie
+            return lastDraw < midnightToday;
         }
 
         function updateDrawButton() {
@@ -3567,5 +3568,5 @@
         `;
         document.head.appendChild(style);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a845a9c91b7f58e',t:'MTc2NDc3ODQzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a96de19661ec931',t:'MTc2NDk3MjU2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
